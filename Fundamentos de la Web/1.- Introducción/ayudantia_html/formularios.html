@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+            <form action="#" method="POST">
+        <!-- <form> es el contenedor de todos los campos del formulario -->
+        <!-- action="#" = la URL a donde se envían los datos (# significa "esta misma página") -->
+        <!-- method="POST" = cómo se envían los datos (POST es seguro, no los muestra en la URL) -->
+
+            <div>
+            <!-- <div> agrupa la etiqueta y el campo para que queden juntos -->
+
+                <label for="nombre">Nombre: </label>
+                <!-- <label> es el texto descriptivo del campo -->
+                <!-- for="nombre" vincula este label con el input que tenga id="nombre" -->
+                <!-- Al hacer clic en el label, el cursor salta al input correspondiente -->
+
+                <input type="text" id="nombre" name="nombre" />
+                <!-- type="text" = campo de texto libre -->
+                <!-- id="nombre" = identificador único, vinculado al label de arriba -->
+                <!-- name="nombre" = nombre del dato que se envía al servidor -->
+
+            </div>
+
+            <div>
+                <label for="edad">Edad: </label>
+                <input type="number" id="edad" name="edad" />
+                <!-- type="number" = solo acepta números, muestra flechitas para subir/bajar -->
+            </div>
+
+            <div>
+                <label for="clave">Contraseña: </label>
+                <input type="password" id="clave" name="clave" />
+                <!-- type="password" = oculta los caracteres con ●●● mientras se escribe -->
+            </div>
+
+            <div>
+                <label for="fecha_nacimiento">Fecha de nacimiento: </label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" />
+                <!-- type="date" = muestra un selector de calendario (día/mes/año) -->
+            </div>
+
+            <div>
+                <label for="color_texto">Color del texto: </label>
+                <input type="color" id="color_texto" name="color_texto" />
+                <!-- type="color" = muestra un selector de color (paleta visual) -->
+                <!-- El valor que guarda es un código hexadecimal, ej: #ff0000 para rojo -->
+            </div>
+
+                <label>Estilo de fuente:</label>
+                <!-- Este label no tiene for="" porque describe al grupo, no a un campo específico -->
+
+                <input type="radio" id="negrita" name="estilo_fuente" value="bold" />
+                <!-- type="radio" = botón de opción, solo se puede elegir UNO del grupo -->
+                <!-- name="estilo_fuente" = todos los radio con el mismo name forman un grupo -->
+                <!-- value="bold" = el valor que se envía al servidor si se elige esta opción -->
+
+                <label for="negrita"><strong>Negrita</strong></label>
+                <!-- Label vinculado al radio de arriba. <strong> pone "Negrita" en negrita -->
+
+                <input type="radio" id="normal" name="estilo_fuente" value="normal" />
+                <!-- Mismo name="estilo_fuente" → es del mismo grupo, excluye al otro radio -->
+
+                <label for="normal">Normal</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="acepto" name="acepto" />
+                <!-- type="checkbox" = casilla que se puede marcar o desmarcar -->
+                <!-- A diferencia del radio, los checkbox son independientes entre sí -->
+
+                <label for="acepto">Acepto los términos y condiciones</label>
+                <!-- El label va DESPUÉS del checkbox para que aparezca a su derecha -->
+            </div>
+
+            <div>
+                <label for="comentario">Comentario: </label>
+                <textarea id="comentario" name="comentario" rows="4" cols="30"></textarea>
+                <!-- <textarea> = área de texto de varias líneas (a diferencia de <input> que es una sola) -->
+                <!-- rows="4" = altura visible: 4 filas -->
+                <!-- cols="30" = ancho visible: 30 caracteres -->
+                <!-- IMPORTANTE: <textarea> SÍ tiene etiqueta de cierre </textarea> -->
+            </div>
+
+            <div>
+                <label for="bandas">Bandas: </label>
+                <select id="bandas" name="bandas">
+                <!-- <select> = lista desplegable (dropdown) -->
+
+                    <option value="imagine_dragons">Imagine Dragons</option>
+                    <!-- <option> = cada opción de la lista -->
+                    <!-- value="almendras" = lo que se envía al servidor (puede ser diferente al texto visible) -->
+                    <!-- "Imagine Dragons" = lo que VE el usuario en la lista -->
+
+                    <option value="the_weekend">The Weeknd</option>
+                    <option value="twenty_one_pilots">Twenty One Pilots</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Enviar" />
+            <!-- type="submit" = botón que ENVÍA el formulario a la URL indicada en action -->
+            <!-- value="Enviar" = texto que se muestra en el botón -->
+            <!-- Este input está fuera de un <div>, lo cual es válido pero menos ordenado -->
+
+        </form>
+        <!-- Fin del formulario -->
+  </body>
+</html>
