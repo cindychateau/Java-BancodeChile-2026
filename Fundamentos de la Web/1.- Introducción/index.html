@@ -89,6 +89,35 @@
             <input type="email" name="correo_electronico" >
         </div>
         <!-- Inputs: Radio, Checkbox, Select -->
+        <div>
+            <label>Estado Civil:</label><br>
+            <input type="radio" name="estado_civil" value="casado" id="casado_id" >
+            <label for="casado_id">Casado</label> <br>
+            <input type="radio" name="estado_civil" value="soltero" id="soltero_id" >
+            <label for="soltero_id">Soltero</label>
+        </div>
+        <div>
+            <label>¿Qué usuario eres?</label>
+            <select name="usuario">
+                <option value="123-45">Elena de Troya</option>
+                <option value="345-67">Juana de Arco</option>
+                <option value="456-78">Pablo Picasso</option>
+                <option value="567-89">Pedro Páramo</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" name="terminos_condiciones" id="terminos_condiciones" >
+            <label for="terminos_condiciones">Acepto los términos y condiciones</label>
+        </div>
+        <div>
+            <textarea name="biografia" cols="40" rows="20" maxlength="20" ></textarea><br>
+            <small>*Tienes un máximo de 20 caracteres</small>
+        </div>
+        <div>
+            <input type="submit" value="Enviar Información">
+            <button type="submit">Segundo botón para enviar</button>
+        </div>
+
         <!-- Validador -->
     </form>
 
