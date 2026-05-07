@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imágenes y Videos</title>
+  </head>
+  <body>
+    <!-- Imagen desde archivo local -->
+    <img src="gato.png" alt="Gatito precioso" width="300" />
+    <!-- src = source (ruta/URL del archivo de imagen) -->
+    <!-- alt = texto alternativo (accesibilidad y cuando la imagen no carga) -->
+    <!-- width = ancho en píxeles -->
+    <!-- NOTA: <img> es una etiqueta vacía, no tiene etiqueta de cierre -->
+
+    <!-- Imagen desde URL externa -->
+    <img src="https://i.pinimg.com/originals/e8/28/66/e82866082813eaeda8bc1340284efdda.jpg" alt="Un gatocito bebesito" width="200" />
+
+    <!-- Video local con controles -->
+    <video src="gatito.mp4" width="400" controls>
+      <!-- controls = muestra botones de play, pausa, volumen -->
+    </video>
+
+    <!-- Video de YouTube usando iframe -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/x1bqzKQ5T6g?si=eA8E4mxPYbuBfKCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <!-- iframe = inline frame, incrusta otra página web dentro de la nuestra -->
+      <!-- allowfullscreen = permite ver en pantalla completa -->
+    </iframe>
+    
+  </body>
+</html>
