@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 03 - Selectores CSS</title>
+
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos_selectores.css" />
+</head>
+
+<body>
+
+  <header>
+    <!-- id="encabezado-principal" para estilizarlo de forma única en el CSS -->
+    <div id="encabezado-principal">
+      <h1>Selectores CSS</h1>
+      <p>Aprenderemos a apuntar a elementos específicos con distintos tipos de selectores.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Selector de etiqueta: aplica a todos los elementos de ese tipo -->
+    <section>
+      <h2>1. Selector de Etiqueta</h2>
+      <p>Se escribe con el nombre de la etiqueta. Aplica a TODOS los elementos de ese tipo.</p>
+      <p>Ejemplo: <code>p { color: blue; }</code></p>
+      <p>Todos estos párrafos reciben su estilo por el selector de etiqueta p.</p>
+
+      <ul>
+        <li>Este li recibe su estilo por el selector de etiqueta li</li>
+        <li>Este también, sin necesidad de clases ni ids</li>
+        <li>Todos los li de la página reciben el mismo estilo</li>
+      </ul>
+    </section>
+
+
+    <!-- Selector de clase: se reutiliza en varios elementos -->
+    <section>
+      <h2>2. Selector de Clase</h2>
+      <p>Se escribe con un <strong>punto (.)</strong> antes del nombre. Se puede usar en varios elementos.</p>
+      <p>Ejemplo: <code>.resaltado { background-color: yellow; }</code></p>
+
+      <p>Este párrafo es normal, sin ninguna clase.</p>
+
+      <!-- class="resaltado" recibe el estilo de .resaltado en el CSS -->
+      <p class="resaltado">Este párrafo tiene class="resaltado": fondo amarillo.</p>
+
+      <!-- class="importante" recibe el estilo de .importante -->
+      <p class="importante">Este párrafo tiene class="importante": texto en rojo.</p>
+
+      <!-- Un elemento puede tener varias clases separadas por espacio -->
+      <p class="resaltado importante">Este párrafo tiene dos clases a la vez: combina ambos estilos.</p>
+
+      <!-- La misma clase funciona en cualquier etiqueta HTML -->
+      <div class="caja-clase">Este div tiene class="caja-clase".</div>
+      <div class="caja-clase">Este otro div reutiliza la misma clase.</div>
+    </section>
+
+
+    <!-- Selector de ID: único en toda la página -->
+    <section>
+      <h2>3. Selector de ID</h2>
+      <p>Se escribe con un <strong>#</strong> antes del nombre. El ID debe ser único, no puede repetirse en la página.</p>
+      <p>Ejemplo: <code>#caja-unica { background-color: pink; }</code></p>
+
+      <!-- id="caja-unica": solo este elemento puede tener este id -->
+      <div id="caja-unica">
+        Soy el único elemento con id="caja-unica". Mi estilo es exclusivo.
+      </div>
+    </section>
+
+
+    <!-- Selector descendiente: padre hijo (con espacio entre ellos) -->
+    <section>
+      <h2>4. Selector Descendiente</h2>
+      <p>Se escribe con un <strong>espacio</strong> entre el padre y el hijo. Solo aplica al hijo que esté dentro del padre.</p>
+      <p>Ejemplo: <code>.lista-especial li { color: purple; }</code></p>
+
+      <!-- Los li de esta lista sí son afectados por ".lista-especial li" -->
+      <ul class="lista-especial">
+        <li>Soy afectado por el selector .lista-especial li</li>
+        <li>Yo también estoy dentro de .lista-especial</li>
+        <li>Los tres recibimos el estilo especial</li>
+      </ul>
+
+      <!-- Los li de esta lista NO son afectados por ".lista-especial li" -->
+      <p><strong>Esta lista no tiene la clase, sus li no reciben el estilo especial:</strong></p>
+      <ul>
+        <li>No tengo la clase lista-especial</li>
+        <li>El selector descendiente no me afecta</li>
+      </ul>
+    </section>
+
+
+    <!-- Selector múltiple: mismos estilos para varios selectores a la vez -->
+    <section>
+      <h2>5. Selector Múltiple (coma)</h2>
+      <p>Se separan con <strong>coma (,)</strong>. Aplica el mismo estilo a todos sin repetir código.</p>
+      <p>Ejemplo: <code>h1, h2, h3 { font-family: Arial; }</code></p>
+
+      <!-- h3, h4 y .texto-multiple comparten el mismo estilo en el CSS -->
+      <h3>Este h3 comparte estilo con el h4 y el párrafo de abajo</h3>
+      <h4>Este h4 también recibe el mismo estilo</h4>
+      <p class="texto-multiple">Este párrafo también está incluido en el selector múltiple.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Ejercicio 03 - Selectores CSS</p>
+  </footer>
+
+</body>
+</html>

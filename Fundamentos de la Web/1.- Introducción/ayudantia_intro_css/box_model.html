@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 02 - Box Model CSS</title>
+
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos_box_model.css" />
+</head>
+
+<body>
+
+  <header>
+    <!-- id="titulo-principal" para aplicarle un estilo único desde el CSS -->
+    <h1 id="titulo-principal">Box Model</h1>
+    <p>En este ejercicio aprenderemos sobre el modelo de caja: margin, padding, border, color y background-color.</p>
+  </header>
+
+  <main>
+
+    <!-- Diagrama visual del Box Model con divs anidados -->
+    <section>
+      <h2>¿Qué es el Box Model?</h2>
+      <p>En CSS, cada elemento HTML es una caja con 4 capas (de afuera hacia adentro):</p>
+
+      <!-- Cada div representa una capa del modelo de caja -->
+      <div class="capa-margin">
+        <span class="etiqueta-capa">MARGIN - Espacio exterior</span>
+
+        <div class="capa-border">
+          <span class="etiqueta-capa">BORDER - Borde</span>
+
+          <div class="capa-padding">
+            <span class="etiqueta-capa">PADDING - Espacio interior</span>
+
+            <div class="capa-content">
+              CONTENIDO / CONTENT
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Los tres divs de colores del ejercicio -->
+    <section>
+      <h2>Colores: color y background-color</h2>
+      <p><strong>color</strong> cambia el texto. <strong>background-color</strong> cambia el fondo.</p>
+
+      <div class="contenedor-divs">
+        <div class="div-verde">¡Hola! Soy el primer div de color light sea green.</div>
+        <div class="div-fucsia">¡Hola! Soy el segundo div de color fucsia.</div>
+        <div class="div-marino">¡Hola! Soy el tercer div de color azul marino.</div>
+      </div>
+    </section>
+
+
+    <!-- Comparación visual de padding -->
+    <section>
+      <h2>Padding: espacio interior</h2>
+      <p>El <strong>padding</strong> es el espacio entre el contenido y el borde. Está DENTRO del elemento.</p>
+
+      <div class="comparacion">
+        <!-- Sin padding: el texto toca el borde -->
+        <div class="caja-sin-padding">Esta caja NO tiene padding. El texto toca el borde.</div>
+
+        <!-- Con padding: el texto respira dentro de la caja -->
+        <div class="caja-con-padding">Esta caja SÍ tiene padding. El texto tiene espacio.</div>
+      </div>
+    </section>
+
+
+    <!-- Ejemplos de margin -->
+    <section>
+      <h2>Margin: espacio exterior</h2>
+      <p>El <strong>margin</strong> es el espacio FUERA del elemento. Separa una caja de las que la rodean.</p>
+
+      <div class="caja-sin-margin">Caja sin margin extra.</div>
+
+      <!-- margin-top: hay espacio entre esta caja y la de arriba -->
+      <div class="caja-con-margin">Esta caja tiene margin-top: 30px.</div>
+
+      <!-- margin-left: la caja está desplazada hacia la derecha -->
+      <div class="caja-con-margin-left">Esta caja tiene margin-left: 50px.</div>
+    </section>
+
+
+    <!-- Tipos de borde -->
+    <section>
+      <h2>Border: el borde de la caja</h2>
+      <p>El <strong>border</strong> tiene tres partes: grosor, tipo y color.</p>
+
+      <div class="borde-solid">border: 3px solid (sólido)</div>
+      <div class="borde-dashed">border: 3px dashed (rayado)</div>
+      <div class="borde-dotted">border: 3px dotted (puntitos)</div>
+    </section>
+
+
+    <!-- Propiedades de texto -->
+    <section>
+      <h2>Propiedades de texto</h2>
+
+      <p class="texto-centrado">Este texto tiene text-align: center</p>
+      <p class="texto-subrayado">Este texto tiene text-decoration: underline</p>
+      <p class="texto-cursiva">Este texto tiene font-style: italic</p>
+      <p class="texto-grande">Este texto tiene font-size: 24px</p>
+      <p class="texto-negrita">Este texto tiene font-weight: bold</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Ejercicio 02 - Box Model CSS</p>
+  </footer>
+
+</body>
+</html>

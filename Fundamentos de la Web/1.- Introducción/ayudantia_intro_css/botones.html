@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 01 - Botones CSS</title>
+
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos_botones.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Práctica de Botones CSS</h1>
+    <p>En este ejercicio aprenderemos a cambiar el tamaño, el borde y la sombra de los botones.</p>
+  </header>
+
+  <main>
+
+    <!-- Botón con forma de píldora gracias a border-radius -->
+    <section>
+      <h2>Botón Buscar</h2>
+      <p>Este botón usa <strong>border</strong> para el borde y <strong>border-radius</strong> para las esquinas redondeadas.</p>
+      <button class="btn-buscar">Buscar</button>
+    </section>
+
+    <!-- Botón circular: height y width iguales + border-radius: 50% -->
+    <section>
+      <h2>Botón + (Agregar)</h2>
+      <p>Este botón usa <strong>border-radius: 50%</strong> para convertirse en un círculo. El alto y el ancho deben ser iguales.</p>
+      <button class="btn-mas">+</button>
+    </section>
+
+    <!-- Botón con sombra usando box-shadow -->
+    <section>
+      <h2>Botón Crear Cuenta</h2>
+      <p>Este botón usa <strong>box-shadow</strong> para agregar una sombra y darle profundidad.</p>
+      <button class="btn-crear-cuenta">Crear cuenta</button>
+    </section>
+
+    <!-- Los tres botones juntos para comparar diferencias -->
+    <section>
+      <h2>Los tres botones juntos</h2>
+      <div class="contenedor-botones">
+        <button class="btn-buscar">Buscar</button>
+        <button class="btn-mas">+</button>
+        <button class="btn-crear-cuenta">Crear cuenta</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Ejercicio 01 - Botones CSS</p>
+  </footer>
+
+</body>
+</html>

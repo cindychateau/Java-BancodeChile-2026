@@ -1,0 +1,158 @@
+/* Hoja de estilos - Ejercicio 03: Selectores CSS */
+
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0fff4;
+  color: #1a3a2a;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #6b9e80;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+/* code: estilo para los fragmentos de código en el HTML */
+code {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+/* Selector de etiqueta: aplica a TODOS los h2 de la página */
+h2 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+/* Selector de etiqueta: aplica a TODOS los p de la página */
+p {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+/* Selector de etiqueta: aplica a TODOS los li de la página */
+li {
+  padding: 4px 0;
+  /* Color naranja para que se note claramente que el selector de etiqueta lo afecta */
+  color: #ea580c;
+}
+
+ul {
+  /* padding-left: espacio a la izquierda de la lista (para la indentación) */
+  padding-left: 24px;
+  margin-top: 10px;
+}
+
+
+/* Selector de ID: el # identifica un id único en la página.
+   Solo aplica al elemento con id="encabezado-principal". */
+#encabezado-principal {
+  text-align: center;
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+}
+
+/* Selector descendiente: el h1 y el p dentro del encabezado */
+#encabezado-principal h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+#encabezado-principal p {
+  font-size: 1rem;
+}
+
+
+/* Selector de clase .resaltado: fondo amarillo fuerte */
+.resaltado {
+  background-color: #facc15;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+/* Selector de clase .importante: texto rojo oscuro y negrita */
+.importante {
+  color: #b91c1c;
+
+  /* font-weight: grosor del texto.
+     bold = negrita, normal = texto normal.
+     También acepta números: 400 = normal, 700 = negrita. */
+  font-weight: bold;
+}
+
+/* Selector de clase .caja-clase: fondo azul notorio */
+.caja-clase {
+  background-color: #2563eb;
+  border: 3px solid #1e3a8a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  /* color blanco para que contraste con el fondo azul */
+  color: white;
+}
+
+
+/* Selector de ID: solo aplica al elemento con id="caja-unica" */
+#caja-unica {
+  background-color: #7e22ce;
+  border: 4px solid #3b0764;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  /* color blanco para contrastar con el fondo morado */
+  color: white;
+  font-size: 15px;
+  margin: 16px 0;
+}
+
+
+/* Selector descendiente: solo los li DENTRO de .lista-especial.
+   Los li de otras listas no son afectados. */
+.lista-especial li {
+  /* Verde oscuro para diferenciarlo del naranja del selector de etiqueta */
+  color: white;
+  background-color: #15803d;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+}
+
+
+/* Selector múltiple con coma: h3, h4 y .texto-multiple
+   reciben el mismo bloque de estilos */
+h3,
+h4,
+.texto-multiple {
+  background-color: #f97316;
+  border: 3px solid #c2410c;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 6px 0;
+  /* color blanco para contrastar con el fondo naranja */
+  color: white;
+}

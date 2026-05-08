@@ -1,0 +1,311 @@
+/* Hoja de estilos - Ejercicio 02: Box Model CSS */
+
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f0ff;
+  color: #333333;
+  padding: 20px;
+
+  /* line-height: espacio entre líneas de texto.
+     1.6 significa que cada línea tiene 1.6 veces el tamaño del texto. */
+  line-height: 1.6;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #888888;
+}
+
+h2 {
+  color: #3d1a6e;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+
+/* Selector de ID: el # identifica un id único.
+   Solo aplica al elemento con id="titulo-principal". */
+#titulo-principal {
+  /* text-align: center centra el texto horizontalmente */
+  text-align: center;
+
+  /* text-decoration: agrega decoración al texto.
+     underline = subrayado, none = sin decoración, line-through = tachado */
+  text-decoration: underline;
+
+  /* font-style: estilo de la fuente.
+     italic = cursiva, normal = texto normal */
+  font-style: italic;
+
+  color: #240046;
+}
+
+
+/* Diagrama del Box Model - divs anidados, cada uno es una capa */
+
+.capa-margin {
+  /* Este div representa el margen (espacio exterior) */
+  background-color: #aed9e0;
+  padding: 24px;
+  border-radius: 4px;
+}
+
+.capa-border {
+  /* Este div representa el borde */
+  background-color: #7e6729;
+  padding: 20px;
+}
+
+.capa-padding {
+  /* Este div representa el relleno interior */
+  background-color: #a8d5a2;
+  padding: 24px;
+}
+
+.capa-content {
+  /* Este div representa el contenido */
+  background-color: #f1a7c5;
+  padding: 20px;
+  text-align: center;
+
+  /* font-weight: grosor del texto.
+     bold = negrita, normal = texto normal.
+     También acepta números del 100 al 900. */
+  font-weight: bold;
+
+  color: #6d1038;
+}
+
+/* Etiqueta de texto en cada capa del diagrama */
+.etiqueta-capa {
+  /* display: block hace que el span ocupe toda la línea,
+     como si fuera un párrafo */
+  display: block;
+
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+
+/* Contenedor que pone los divs en fila */
+.contenedor-divs {
+  display: flex;
+  gap: 16px;
+
+  /* flex-wrap: wrap permite que los elementos bajen a la siguiente
+     línea si no hay espacio suficiente en la pantalla */
+  flex-wrap: wrap;
+}
+
+
+/* Los tres divs de colores */
+
+.div-verde {
+  /* background-color: color de fondo del elemento */
+  background-color: lightseagreen;
+
+  /* color: color del texto */
+  color: white;
+
+  width: 220px;
+  height: 80px;
+  padding: 10px 16px;
+
+  /* font-size: tamaño del texto en píxeles */
+  font-size: 13px;
+
+  font-weight: bold;
+}
+
+.div-fucsia {
+  background-color: fuchsia;
+  color: white;
+  width: 220px;
+  height: 80px;
+  padding: 10px 16px;
+
+  /* text-align: center centra el texto horizontalmente */
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.div-marino {
+  background-color: navy;
+  color: white;
+  width: 220px;
+  height: 80px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* Comparación de padding */
+
+.caja-sin-padding {
+  background-color: #dbeafe;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  width: 280px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  /* Sin padding: el texto está pegado al borde */
+}
+
+.caja-con-padding {
+  background-color: #dcfce7;
+  border: 2px solid #16a34a;
+  border-radius: 6px;
+  width: 280px;
+  font-size: 14px;
+  margin-bottom: 12px;
+
+  /* padding: espacio entre el texto y el borde.
+     Con un solo valor aplica igual en los 4 lados. */
+  padding: 20px;
+}
+
+
+/* Ejemplos de margin */
+
+.caja-sin-margin {
+  background-color: #fce7f3;
+  border: 2px solid #ec4899;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #831843;
+}
+
+.caja-con-margin {
+  background-color: #fce7f3;
+  border: 2px solid #ec4899;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #831843;
+
+  /* margin-top: espacio exterior arriba del elemento.
+     Empuja la caja hacia abajo, separándola de la caja anterior. */
+  margin-top: 30px;
+}
+
+.caja-con-margin-left {
+  background-color: #fce7f3;
+  border: 2px solid #ec4899;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #831843;
+  margin-top: 16px;
+
+  /* margin-left: espacio exterior a la izquierda.
+     Empuja la caja hacia la derecha. */
+  margin-left: 50px;
+}
+
+
+/* Tipos de borde */
+
+/* Estilos base que comparten las tres cajas de borde */
+.borde-solid,
+.borde-dashed,
+.borde-dotted {
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.borde-solid {
+  /* solid: línea continua */
+  border: 3px solid #0ea5e9;
+  background-color: #e0f2fe;
+  color: #0c4a6e;
+}
+
+.borde-dashed {
+  /* dashed: línea de guiones */
+  border: 3px dashed #16a34a;
+  background-color: #dcfce7;
+  color: #14532d;
+}
+
+.borde-dotted {
+  /* dotted: línea de puntos */
+  border: 3px dotted #d97706;
+  background-color: #fef3c7;
+  color: #78350f;
+}
+
+
+/* Propiedades de texto */
+
+/* Estilos base que comparten todos los párrafos de texto */
+.texto-centrado,
+.texto-subrayado,
+.texto-cursiva,
+.texto-grande,
+.texto-negrita {
+  background-color: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.texto-centrado {
+  /* text-align: alinea el texto dentro del elemento.
+     left = izquierda, center = centrado, right = derecha */
+  text-align: center;
+}
+
+.texto-subrayado {
+  /* text-decoration: agrega una decoración visual al texto.
+     underline = subrayado */
+  text-decoration: underline;
+}
+
+.texto-cursiva {
+  /* font-style: cambia el estilo de la fuente.
+     italic = cursiva */
+  font-style: italic;
+}
+
+.texto-grande {
+  /* font-size: tamaño del texto.
+     Se puede escribir en px (píxeles) o rem (relativo a la raíz). */
+  font-size: 24px;
+}
+
+.texto-negrita {
+  /* font-weight: grosor del texto.
+     bold = negrita, normal = normal.
+     Números: 400 = normal, 700 = negrita, 900 = muy grueso. */
+  font-weight: bold;
+}

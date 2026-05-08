@@ -1,0 +1,147 @@
+/* Hoja de estilos - Ejercicio 01: Botones CSS */
+
+
+/* Estilos generales de la página */
+body {
+  /* font-family: define la fuente del texto.
+     Se ponen varias separadas por coma como respaldo. */
+  font-family: Arial, sans-serif;
+
+  /* background-color: color de fondo de la página */
+  background-color: #f0f4ff;
+
+  /* color: color del texto por defecto */
+  color: #333333;
+
+  /* padding: espacio interior entre el borde y el contenido */
+  padding: 20px;
+}
+
+h1 {
+  /* text-align: alinea el texto. center lo centra horizontalmente */
+  text-align: center;
+}
+
+h2 {
+  /* margin-bottom: espacio exterior hacia abajo del elemento */
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #ffffff;
+
+  /* border-radius: redondea las esquinas del elemento */
+  border-radius: 12px;
+
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+
+  /* font-size: tamaño del texto en píxeles */
+  font-size: 14px;
+}
+
+/* Contenedor que pone los botones en fila */
+.contenedor-botones {
+  /* display flex: pone los elementos hijos uno al lado del otro */
+  display: flex;
+
+  /* gap: espacio entre los elementos dentro del flex */
+  gap: 20px;
+
+  /* align-items: centra los elementos verticalmente */
+  align-items: center;
+}
+
+
+/* Botón Buscar - forma de píldora */
+.btn-buscar {
+  /* width: ancho del botón */
+  width: 220px;
+
+  /* height: alto del botón */
+  height: 56px;
+
+  background-color: #e0e0e0;
+
+  /* color: color del texto del botón */
+  color: #333333;
+
+  /* border: define el borde. Se escriben tres valores:
+     grosor - tipo de línea - color
+     Tipos: solid (continua), dashed (rayada), dotted (punteada) */
+  border: 3px solid #333333;
+
+  /* border-radius: redondea las esquinas.
+     Con un valor grande el resultado es una forma de píldora. */
+  border-radius: 40px;
+
+  /* font-size: tamaño del texto dentro del botón */
+  font-size: 16px;
+
+  /* font-weight: grosor del texto.
+     normal = texto normal, bold = negrita.
+     También acepta números: 100 (muy delgado) hasta 900 (muy grueso). */
+  font-weight: bold;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* Botón + (círculo perfecto) */
+.btn-mas {
+  /* Para que sea un círculo, width y height deben ser iguales */
+  width: 70px;
+  height: 70px;
+
+  background-color: #f77f00;
+  color: #ffffff;
+
+  /* border: none elimina cualquier borde */
+  border: none;
+
+  /* border-radius: 50% convierte el elemento en círculo.
+     Funciona porque width y height tienen el mismo valor. */
+  border-radius: 50%;
+
+  font-size: 32px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Botón Crear Cuenta - con sombra */
+.btn-crear-cuenta {
+  width: 220px;
+  height: 56px;
+
+  background-color: #0096ff;
+  color: #ffffff;
+
+  border: none;
+
+  /* border-radius pequeño: esquinas levemente redondeadas */
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+
+  /* box-shadow: agrega una sombra alrededor del elemento.
+     Se escriben cuatro valores:
+     1. desplazamiento horizontal (0 = sin desplazamiento lateral)
+     2. desplazamiento vertical   (8px = sombra hacia abajo)
+     3. difuminado                (20px = sombra suave y difusa)
+     4. color con transparencia   rgba(rojo, verde, azul, opacidad)
+     La opacidad va de 0 (transparente) a 1 (sólido). */
+  box-shadow: 0 8px 20px rgba(0, 150, 255, 0.45);
+}
