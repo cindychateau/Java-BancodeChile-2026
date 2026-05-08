@@ -71,3 +71,22 @@ h2 {
 }
 
 /* MODELO DE CAJA */
+.caja {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+
+    /*Margin: el espacio entre mi elemento y el resto de la página*/
+    margin: 20px;
+    margin-top: 40px; /*-top, -right, -bottom, -left*/
+    margin: 100px 15px;/* ArribaAbajo  IzqDer */
+    margin: 50px 10px 100px 200px; /* arriba der abajo izq*/
+
+    /*Padding: margen interno, relleno, espacio entre el contenido de mi elemento y el borde del elemento*/
+    padding: 20px;
+    padding-top: 50px; /* -top, -right, -bottom, -left */
+    padding: 10px 100px; /* ArribaAbajo IzqDer */
+    padding: 10px 30px 50px 100px; /* arriba der abajo izq */
+
+    border: 3px black solid; /* solid, dotted, dashed */
+}
