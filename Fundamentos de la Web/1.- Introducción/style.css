@@ -1,0 +1,73 @@
+/* CSS: Cascade Style Sheets
+Estilizar el HTML que tengamos
+*/
+
+/*
+SELECTORES BÁSICOS
+
+etiqueta {
+    propiedad: valor;
+}
+
+.clase {
+    propiedad: valor;
+}
+
+#id {
+    propiedad: valor;
+}
+
+*/
+
+h2 {
+    color: purple;
+    font-size: 40px;
+}
+
+.rojo {
+    color: red;
+    font-size: 11px;
+}
+
+.subrayado {
+    text-decoration: underline;
+}
+
+#parrafo_especial {
+    border: 2px solid blue;
+}
+
+.colores {
+    /* color: magenta; */
+    /* color: rgb(111, 192, 243); */
+    color: #0eb2e9;
+    background-color: green;
+}
+
+#texto {
+    text-align: left; /*left, center, right, justify*/
+    text-decoration: underline; /*none, underline, line-through, overline*/
+    font-style: italic; /*italic, normal*/
+    font-weight: bold; /* bold, 100, 300, 900 */
+    font-size: 20px;
+    font-family: sans-serif; /* importar una fuente, sans-serif, serif, monospace, cursive */
+}
+
+.tamano {
+    width: 400px; /*ancho*/
+    height: 50px; /*alto*/
+    background-color: darkblue;
+}
+
+.fondo {
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+
+    background-color: aqua;
+    background-image: url(img/gatito_small.jpg);
+    background-repeat: no-repeat; /*no-repeat, repeat, repeat-x, repeat-y*/
+    background-size: contain; /*cover: estirar verticalmente la imagen. contain: estirar horizontal*/
+}
+
+/* MODELO DE CAJA */
