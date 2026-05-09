@@ -1,0 +1,229 @@
+/* Hoja de estilos - Ejercicio 04: Display y Bloques CSS */
+
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #1a1a2e;
+}
+
+h2 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #888888;
+}
+
+
+/* Bloques con display: block
+   Cada uno ocupa todo el ancho y se apila verticalmente */
+
+.bloque-rojo {
+  /* display: block hace que el elemento ocupe todo el ancho disponible
+     y que el siguiente elemento empiece en una línea nueva.
+     Los div ya son block por defecto, pero lo escribimos para verlo claro. */
+  display: block;
+
+  background-color: tomato;
+  color: white;
+
+  /* padding: espacio interior entre el texto y los bordes */
+  padding: 16px;
+
+  /* margin-bottom: espacio exterior debajo del bloque */
+  margin-bottom: 8px;
+
+  font-weight: bold;
+}
+
+.bloque-azul {
+  display: block;
+  background-color: steelblue;
+  color: white;
+  padding: 16px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.bloque-verde {
+  display: block;
+  background-color: seagreen;
+  color: white;
+  padding: 16px;
+  font-weight: bold;
+}
+
+
+/* Bloques con display: inline-block
+   Se ponen uno al lado del otro pero respetan width y height */
+
+.bloque-inline {
+  /* display: inline-block: el elemento se coloca al lado del siguiente,
+     como si fuera texto, pero acepta width y height como un bloque. */
+  display: inline-block;
+
+  /* width: ancho del elemento */
+  width: 80px;
+
+  /* height: alto del elemento */
+  height: 80px;
+
+  /* text-align: center centra el texto horizontalmente */
+  text-align: center;
+
+  /* line-height igual al height centra el texto verticalmente */
+  line-height: 80px;
+
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+
+  /* margin-right: espacio exterior a la derecha, separa los bloques entre sí */
+  margin-right: 8px;
+}
+
+/* Colores individuales para cada bloque inline */
+.rojo  { background-color: tomato; }
+.azul  { background-color: steelblue; }
+.verde { background-color: seagreen; }
+
+
+/* Distribución de bloques (sección 3) */
+
+/* Contenedor principal que envuelve toda la distribución */
+.contenedor {
+  /* width: ancho fijo del contenedor */
+  width: 560px;
+
+  background-color: #e2e8f0;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Barra superior: ocupa todo el ancho del contenedor */
+.barra-superior {
+  background-color: #f59e0b;
+  color: white;
+  font-weight: bold;
+
+  /* width: 100% hace que ocupe todo el ancho del contenedor */
+  width: 100%;
+
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Fila del medio: columna izquierda y columna derecha una al lado de la otra */
+.fila-media {
+  /* display: inline-block en los hijos los pone en fila.
+     Aquí usamos el contenedor para agruparlos. */
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Columna izquierda: contiene los bloques pequeños y el ancho */
+.columna-izquierda {
+  background-color: deeppink;
+  padding: 8px;
+
+  /* width fijo para la columna izquierda */
+  width: 380px;
+}
+
+/* Columna derecha: bloque único y alto */
+.columna-derecha {
+  background-color: skyblue;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+
+  /* width: ocupa el espacio restante */
+  width: 160px;
+
+  /* height: alto fijo para la columna derecha */
+  height: 180px;
+
+  text-align: center;
+  line-height: 180px;
+}
+
+/* Bloques pequeños dentro de la columna izquierda, en fila */
+.bloque-pequeno {
+  display: inline-block;
+
+  width: 160px;
+  height: 120px;
+
+  /* margin-right y margin-bottom: espacio entre los bloques pequeños */
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  text-align: center;
+  line-height: 120px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.amarillo { background-color: #f59e0b; }
+.rosa     { background-color: #ec4899; }
+
+/* Bloque ancho: ocupa todo el ancho de la columna izquierda */
+.bloque-ancho {
+  background-color: limegreen;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+
+  /* display: block para que ocupe todo el ancho disponible */
+  display: block;
+
+  /* width: 100% ocupa todo el ancho del contenedor padre */
+  width: 100%;
+
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+/* Barra inferior: ocupa todo el ancho del contenedor */
+.barra-inferior {
+  background-color: #7c3aed;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}

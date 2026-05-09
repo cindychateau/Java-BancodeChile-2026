@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 05 - Selectores Avanzados CSS</title>
+
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos_selectores_avanzados.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Selectores Avanzados CSS</h1>
+    <p>Aprenderemos el selector comodín, descendente, descendente directo, combinados y de atributo.</p>
+  </header>
+
+  <main>
+
+    <!-- Selector comodín * -->
+    <section>
+      <h2>1. Selector Comodín (*)</h2>
+      <p>El asterisco * selecciona TODOS los elementos de la página. Es el selector más general que existe y tiene la especificidad más baja.</p>
+      <p>Es útil para aplicar un estilo base a todo, como quitar márgenes o definir el box-sizing.</p>
+
+      <!-- El outline rojo del * se verá en todos estos elementos -->
+      <div class="demo-comodin">
+        <p>Este párrafo tiene el borde del selector *</p>
+        <span>Este span también</span>
+        <strong>Y este strong también</strong>
+      </div>
+    </section>
+
+
+    <!-- Especificidad -->
+    <section>
+      <h2>2. Especificidad: ¿qué selector gana?</h2>
+      <p>Cuando varios selectores apuntan al mismo elemento, gana el más específico. La "fuerza" de cada selector:</p>
+
+      <ul>
+        <li>Selector comodín *  → fuerza 0</li>
+        <li>Selector de etiqueta (h1, p…) → fuerza 1</li>
+        <li>Selector de clase (.verde…)   → fuerza 10</li>
+        <li>Selector de ID (#rojo…)       → fuerza 100</li>
+      </ul>
+
+      <!-- Este h1 tiene etiqueta, clase e id al mismo tiempo.
+           En el CSS los tres le dan colores distintos. ¿Cuál gana? -->
+      <h1 id="id-rojo" class="clase-verde">¿De qué color soy?</h1>
+
+      <p>El h1 de arriba tiene a la vez: etiqueta h1 (azul), class="clase-verde" (verde) e id="id-rojo" (rojo). El ID gana porque tiene más fuerza (100).</p>
+    </section>
+
+
+    <!-- Selector descendente -->
+    <section>
+      <h2>3. Selector Descendente (padre hijo)</h2>
+      <p>Selecciona un elemento que esté en cualquier nivel dentro de otro. Se escribe con un espacio entre padre e hijo.</p>
+      <p>Ejemplo: <code>.cita p</code> selecciona todos los p dentro de .cita, sin importar cuántos niveles haya entre ellos.</p>
+
+      <!-- Los párrafos dentro de .cita reciben estilo especial -->
+      <div class="cita">
+        <p>"CSS es como el ajedrez. Aprendes los conceptos básicos en un día y pasas toda la vida intentando dominarlo."</p>
+        <p>— Anónimo</p>
+      </div>
+
+      <!-- Este párrafo está fuera de .cita, no recibe el estilo -->
+      <p>Este párrafo está fuera de .cita, no recibe el estilo del selector descendente.</p>
+    </section>
+
+
+    <!-- Selector descendente directo -->
+    <section>
+      <h2>4. Selector Descendente Directo (padre > hijo)</h2>
+      <p>El símbolo <strong>&gt;</strong> selecciona solo los hijos directos, no los nietos ni más profundo.</p>
+      <p>Ejemplo: <code>.menu > li</code> solo afecta a los li que están directamente dentro de .menu.</p>
+
+      <ul class="menu">
+        <!-- Estos li son hijos DIRECTOS de .menu, sí reciben el estilo -->
+        <li>Inicio</li>
+        <li>Productos
+          <!-- Esta sublista está dentro de un li, no es hija directa de .menu -->
+          <ul>
+            <!-- Estos li NO son hijos directos de .menu, no reciben el estilo -->
+            <li>Producto A</li>
+            <li>Producto B</li>
+          </ul>
+        </li>
+        <li>Contacto</li>
+      </ul>
+    </section>
+
+
+    <!-- Selectores combinados -->
+    <section>
+      <h2>5. Selectores Combinados</h2>
+      <p>Podemos combinar tipo + clase, o ID + etiqueta, para ser más específicos y no afectar a otros elementos.</p>
+      <p>Ejemplo: <code>#contenedor p.destacado</code> solo afecta a los p con clase "destacado" que estén dentro de #contenedor.</p>
+
+      <div id="contenedor">
+        <!-- Este p tiene clase destacado → recibe el estilo combinado -->
+        <p class="destacado">Párrafo destacado dentro del contenedor.</p>
+
+        <!-- Este p no tiene clase destacado → solo recibe el estilo general de #contenedor p -->
+        <p>Párrafo normal dentro del contenedor.</p>
+      </div>
+
+      <!-- Este p.destacado está FUERA del contenedor, no recibe el estilo combinado -->
+      <p class="destacado">Este párrafo tiene class="destacado" pero está fuera del contenedor, así que no recibe el estilo combinado.</p>
+    </section>
+
+
+    <!-- Selector de atributo -->
+    <section>
+      <h2>6. Selector de Atributo ([atributo])</h2>
+      <p>Selecciona elementos según el valor de sus atributos HTML. Muy útil para estilizar formularios.</p>
+      <p>Ejemplo: <code>input[type="text"]</code> solo afecta a los input de tipo texto.</p>
+
+      <!-- Formulario con distintos tipos de input -->
+      <form>
+        <p>
+          <!-- input type="text": campo de texto normal -->
+          <label>Nombre:</label>
+          <input type="text" placeholder="Escribe tu nombre" />
+        </p>
+
+        <p>
+          <!-- input type="email": campo de correo electrónico -->
+          <label>Email:</label>
+          <input type="email" placeholder="Escribe tu email" />
+        </p>
+
+        <p>
+          <!-- input type="submit": botón de envío -->
+          <input type="submit" value="Enviar" />
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Ejercicio 05 - Selectores Avanzados CSS</p>
+  </footer>
+
+</body>
+</html>

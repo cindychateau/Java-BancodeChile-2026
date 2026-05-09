@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 04 - Display y Bloques</title>
+
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos_bloques.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Display y Bloques CSS</h1>
+    <p>En este ejercicio aprenderemos a usar display, margin, padding, width y height para posicionar y distribuir bloques en la página.</p>
+  </header>
+
+  <main>
+
+    <!-- Explicación de display block -->
+    <section>
+      <h2>display: block</h2>
+      <p>Un elemento con <strong>display: block</strong> ocupa todo el ancho disponible y siempre empieza en una nueva línea. Los div son block por defecto.</p>
+
+      <!-- Tres bloques apilados verticalmente -->
+      <div class="bloque-rojo">Bloque 1</div>
+      <div class="bloque-azul">Bloque 2</div>
+      <div class="bloque-verde">Bloque 3</div>
+    </section>
+
+
+    <!-- Explicación de display inline-block -->
+    <section>
+      <h2>display: inline-block</h2>
+      <p>Con <strong>display: inline-block</strong> los elementos se ponen uno al lado del otro, pero siguen respetando width, height, margin y padding.</p>
+
+      <!-- Tres bloques en fila gracias a inline-block -->
+      <div class="bloque-inline rojo">A</div>
+      <div class="bloque-inline azul">B</div>
+      <div class="bloque-inline verde">C</div>
+    </section>
+
+
+    <!-- Distribución parecida a la imagen de referencia pero diferente -->
+    <section>
+      <h2>Distribución de bloques</h2>
+      <p>Combinando display, width, height, margin y padding podemos crear cualquier distribución.</p>
+
+      <!-- Contenedor principal de toda la distribución -->
+      <div class="contenedor">
+
+        <!-- Barra superior: ocupa todo el ancho -->
+        <div class="barra-superior">Barra superior</div>
+
+        <!-- Fila del medio: columna izquierda + columna derecha -->
+        <div class="fila-media">
+
+          <!-- Columna izquierda: contiene dos bloques pequeños arriba y uno ancho abajo -->
+          <div class="columna-izquierda">
+            <div class="bloque-pequeno amarillo">1</div>
+            <div class="bloque-pequeno rosa">2</div>
+            <div class="bloque-ancho">3</div>
+          </div>
+
+          <!-- Columna derecha: un solo bloque alto -->
+          <div class="columna-derecha">4</div>
+
+        </div>
+
+        <!-- Barra inferior: ocupa todo el ancho -->
+        <div class="barra-inferior">Barra inferior</div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Ejercicio 04 - Display y Bloques CSS</p>
+  </footer>
+
+</body>
+</html>

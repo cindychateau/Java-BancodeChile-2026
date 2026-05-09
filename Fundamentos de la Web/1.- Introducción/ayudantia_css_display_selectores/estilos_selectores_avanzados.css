@@ -1,0 +1,280 @@
+/* Hoja de estilos - Ejercicio 05: Selectores Avanzados CSS */
+
+
+/* Selector comodín *: aplica a TODOS los elementos de la página.
+   Es el selector con menor especificidad (fuerza 0).
+   Aquí lo usamos para quitar márgenes y padding por defecto del navegador. */
+* {
+  /* margin: 0 elimina el espacio exterior por defecto de todos los elementos */
+  margin: 0;
+
+  /* padding: 0 elimina el espacio interior por defecto de todos los elementos */
+  padding: 0;
+
+  /* box-sizing: border-box hace que el padding y el border se cuenten
+     dentro del width y height, no por fuera. Es una práctica muy común. */
+  box-sizing: border-box;
+}
+
+
+/* Estilos generales (van después del reset del * para no ser sobreescritos) */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+h1 {
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+/* Selector de etiqueta: aplica a TODOS los h2 (fuerza 1) */
+h2 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Selector de etiqueta: aplica a TODOS los p (fuerza 1) */
+p {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+ul {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+code {
+  background-color: #e2e8f0;
+  color: #7c3aed;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+/* Demo del selector comodín en una sección específica.
+   Le ponemos outline a todos los elementos dentro de .demo-comodin
+   para que se vea cómo el * los afecta a todos. */
+.demo-comodin * {
+  /* outline: es como un border pero no ocupa espacio en el layout.
+     Se usa mucho para depurar (ver los bordes de los elementos). */
+  outline: 2px solid red;
+
+  /* margin y padding para que los elementos no queden pegados */
+  margin: 6px;
+  padding: 6px;
+}
+
+.demo-comodin {
+  background-color: #fff7ed;
+  border: 2px dashed #f97316;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+
+/* Especificidad: tres selectores apuntan al mismo h1, gana el más fuerte */
+
+/* Selector de etiqueta h1: fuerza 1 → color azul */
+h1 {
+  color: blue;
+}
+
+/* Selector de clase .clase-verde: fuerza 10 → color verde.
+   Gana sobre h1 porque 10 > 1 */
+.clase-verde {
+  color: green;
+}
+
+/* Selector de ID #id-rojo: fuerza 100 → color rojo.
+   Gana sobre todos porque 100 > 10 > 1 */
+#id-rojo {
+  color: red;
+  font-size: 1.4rem;
+  margin: 16px 0;
+}
+
+
+/* Selector descendente: .cita p
+   Afecta a todos los p que estén DENTRO de .cita,
+   sin importar cuántos niveles haya. */
+.cita p {
+  color: #1e3a5f;
+
+  /* font-style: italic pone el texto en cursiva */
+  font-style: italic;
+
+  background-color: #dbeafe;
+  padding: 12px 16px;
+  border-left: 4px solid #2563eb;
+  margin-bottom: 6px;
+}
+
+.cita {
+  margin: 16px 0;
+}
+
+
+/* Selector descendente directo: .menu > li
+   El símbolo > significa "hijo directo".
+   Solo afecta a los li que están directamente dentro de .menu,
+   no a los li de las sublistas. */
+.menu > li {
+  background-color: #7c3aed;
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  list-style: none;
+}
+
+/* Los li dentro de la sublista NO son hijos directos de .menu,
+   por eso reciben un estilo diferente */
+.menu ul li {
+  background-color: #e9d5ff;
+  color: #4c1d95;
+  padding: 6px 16px;
+  margin: 4px 0;
+  border-radius: 4px;
+  font-weight: normal;
+  list-style: none;
+}
+
+.menu {
+  padding-left: 0;
+}
+
+
+/* Selectores combinados */
+
+/* #contenedor p: todos los p dentro de #contenedor */
+#contenedor p {
+  background-color: #334155;
+  color: white;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* #contenedor p.destacado: solo los p con clase "destacado"
+   que estén dentro de #contenedor.
+   Este selector es más específico que #contenedor p, así que gana. */
+#contenedor p.destacado {
+  background-color: #dc2626;
+  color: white;
+  font-weight: bold;
+}
+
+#contenedor {
+  background-color: #f1f5f9;
+  border: 3px solid #334155;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+/* .destacado fuera del contenedor: no recibe el estilo combinado,
+   solo este estilo general */
+p.destacado {
+  background-color: #fef9c3;
+  color: #713f12;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+/* Selector de atributo: [type="valor"]
+   Selecciona elementos según el valor de un atributo HTML. */
+
+/* input[type="text"]: solo los campos de texto */
+input[type="text"] {
+  /* border: none quita el borde por defecto del input */
+  border: none;
+
+  /* border-bottom: solo el borde inferior, estilo moderno */
+  border-bottom: 3px solid #7c3aed;
+
+  padding: 8px 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+
+  /* outline: none quita el borde azul que pone el navegador al hacer foco */
+  outline: none;
+
+  background-color: transparent;
+  width: 200px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* input[type="email"]: solo los campos de email */
+input[type="email"] {
+  border: none;
+  border-bottom: 3px solid #0891b2;
+  padding: 8px 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background-color: transparent;
+  width: 200px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* input[type="submit"]: solo el botón de envío */
+input[type="submit"] {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+form p {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 4px;
+}
