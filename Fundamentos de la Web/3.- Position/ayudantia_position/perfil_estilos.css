@@ -1,0 +1,89 @@
+/* Reset simple: quitamos márgenes y rellenos por defecto de todos los elementos */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* Fondo de la página y centrado de la tarjeta */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* vh = viewport height, es decir la altura visible de la pantalla.
+   100vh significa el 100% de esa altura, útil para centrar contenido verticalmente */
+}
+
+/* Tarjeta blanca con bordes redondeados */
+.tarjeta {
+    width: 500px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    overflow: hidden; /* evita que la foto se salga de los bordes redondeados */
+}
+
+/* Banner de color en la parte superior */
+.banner {
+    background-color: #00bcd4; /* celeste */
+    height: 120px;
+
+    /* position relative para que la foto pueda posicionarse en relación a este banner */
+    position: relative;
+}
+
+/* Foto de perfil circular que sobresale del banner */
+.foto-perfil {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;        /* hace la imagen circular */
+    border: 4px solid white;   /* borde blanco alrededor */
+    object-fit: cover;         /* recorta la imagen sin deformarla */
+
+    /* position absolute para sacarla del flujo y ubicarla exactamente donde queremos */
+    position: absolute;
+    bottom: -60px; /* la baja 60px desde el borde inferior del banner, haciendo que sobresalga */
+    left: 30px;
+}
+
+/* Área de texto con espacio arriba para que no tape la foto */
+.contenido {
+    padding: 75px 30px 30px 30px; /* el padding-top grande deja espacio para la foto */
+}
+
+/* Nombre */
+.contenido h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Ubicación */
+.ubicacion {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Profesión */
+.profesion {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Descripción */
+.descripcion {
+    color: #555;
+    line-height: 1.6; /* espacio entre líneas para que sea más legible */
+    margin-bottom: 25px;
+}
+
+/* Botón de editar perfil */
+button {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
