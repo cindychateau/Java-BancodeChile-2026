@@ -1,0 +1,57 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #c8f7ff;
+    text-align: center;
+}
+
+.texto {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /*margin: 40px 0;*/
+    font-size: 20px;
+    color: #003566;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /*necesita flex*/
+}
+
+.caja {
+    background-color: #4361ee;
+    color: white;
+    padding: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+/*
+MEDIDAS
+Celular: hasta 480px
+Tablet: hasta 768px
+Laptop: hasta 1024px
+Desktop: más 1200px (1280px)
+Desktop HD: más de 1900 (1920px)
+*/
+
+/*Si la pantalla llega a un máximo de 1024*/
+@media (max-width: 1024px) {
+
+    body {
+        background-color: #d9f99d;
+    }
+
+    .caja {
+        background-color: #2b9348;
+    }
+
+}
