@@ -43,7 +43,9 @@ Desktop: más 1200px (1280px)
 Desktop HD: más de 1900 (1920px)
 */
 
-/*Si la pantalla llega a un máximo de 1024*/
+/*Si la pantalla llega a un máximo de 1024
+769px - 1024px
+Laptop*/
 @media (max-width: 1024px) {
 
     body {
@@ -54,4 +56,44 @@ Desktop HD: más de 1900 (1920px)
         background-color: #2b9348;
     }
 
+}
+
+/*
+481px - 768px
+Tablet
+*/
+@media (max-width: 768px) {
+
+    body {
+        background-color: #ffe066;
+    }
+
+    .contenedor {
+        /*Hace que mi contenedor sea multilinea. Entonces si algo no cabe, lo baja*/
+        flex-wrap: wrap;
+    }
+
+    .caja {
+        background-color: #ff922b;
+    }
+}
+
+/*
+0px - 480px
+*/
+@media (max-width: 480px) {
+
+    body {
+        background-color: #ffccd5;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caja {
+        background-color: red;
+        width: 80%;
+    }
 }
