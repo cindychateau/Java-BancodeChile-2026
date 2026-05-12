@@ -1,0 +1,83 @@
+/* Caja que agrupa todo el contenido */
+.container {
+  width: 750px; /* ancho fijo del proyecto */
+  margin: 0 auto; /* centra la caja en la pantalla */
+  background-color: #f5f0ff; /* fondo lila muy clarito */
+  padding: 10px; /* espacio entre el borde y el contenido */
+  border: 2px solid #c9a0f5; /* borde morado */
+}
+
+/* Título centrado */
+h1 {
+  text-align: center;
+  font-family: Georgia, serif;
+  margin: 10px;
+}
+
+/* Estilo base que comparten las 4 filas */
+.fila {
+  display: flex; /* pone las imágenes en fila usando flexbox */
+  justify-content: space-evenly; /* distribuye las imágenes con espacio igual entre ellas */
+  /* Opciones de justify-content */
+  
+  /* justify-content: flex-start; */ /* agrupa los elementos al inicio */
+  /* justify-content: center; */ /* agrupa los elementos al centro */
+  /* justify-content: flex-end; */ /* agrupa los elementos al final */
+  /* justify-content: space-between; */ /* espacio igual entre elementos, pegados a los bordes */
+  /* justify-content: space-evenly; */ /* espacio igual entre todos, incluyendo los bordes */
+  /* justify-content: space-around; */ /* espacio igual a los lados de cada elemento */
+
+  align-items: center; /* centra las imágenes verticalmente */
+  padding: 10px; /* espacio interno de cada fila */
+  margin-bottom: 5px; /* separación entre filas */
+}
+
+/* Color de fondo de cada fila */
+#fila-1 {
+  background-color: #ff9933; /* naranja */
+}
+
+#fila-2 {
+  background-color: #66cc66; /* verde */
+}
+
+#fila-3 {
+  background-color: #9966cc; /* morado */
+}
+
+#fila-4 {
+  background-color: #ff99bb; /* rosado */
+}
+
+/* Imágenes verticales, más altas que anchas */
+#fila-1 img {
+  width: 150px;
+  height: 200px;
+}
+
+/* Imágenes horizontales, más anchas que altas */
+#fila-2 img {
+  width: 200px;
+  height: 200px;
+}
+
+/* Imágenes cuadradas, mismo ancho y alto */
+#fila-3 img {
+  width: 180px;
+  height: 180px;
+}
+
+/* Imágenes más pequeñas para que quepan las 4 en una fila */
+#fila-4 img {
+  width: 160px;
+  height: 160px;
+}
+
+/* Pie de página */
+footer {
+  background-color: #cc99ff;
+  text-align: center;
+  padding: 8px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
