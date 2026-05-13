@@ -1,0 +1,78 @@
+/*CSS RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav button {
+    background-color: #00bcd4;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    gap: 80px;
+}
+
+.seccion-izquierda {
+    /* border: 1px solid magenta;
+    height: 500px; */
+    flex: 2;
+}
+
+.seccion-derecha {
+    border: 1px solid pink;
+    height: 500px;
+    flex: 1;
+}
+
+.tarjeta {
+    border-radius: 10px;
+    box-shadow: -2px 8px 21px 1px rgba(0, 0, 0, 0.21);
+    width: 100%;
+    /* height: 300px; */
+    overflow: hidden;
+}
+
+.tarjeta-encabezado {
+    height: 120px;
+    background-color: #00bcd4;
+}
+
+#tarjeta-usuario img {
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: -50px;
+    left: 50px;
+}
