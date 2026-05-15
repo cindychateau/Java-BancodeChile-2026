@@ -1,39 +1,175 @@
-/*Reseteo*/
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-/*Estilos Body*/
 body {
-    font-family: Georgia, serif;
-    background-color: #f5efe6;
-    color: #1a3a4a;
+  font-family: Georgia, serif;
+  background-color: #f5efe6;
+  color: #1a3a4a;
 }
-
-/*Navbar*/
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 32px;
-    background-color: #1a3a4a;
+  display: flex;
+  justify-content: space-between; /* empuja el primer hijo al extremo izquierdo y el último al extremo derecho */
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #1a3a4a;
 }
 
 .nav-titulo {
-    color:#f5efe6;
-    font-size: 18px;
+  color: #f5efe6;
+  font-size: 18px;
+  letter-spacing: 2px; /* separa las letras entre sí, en este caso 2px de espacio extra entre cada carácter */
 }
 
 .nav-lista {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px; /* pone 24px de espacio entre cada elemento hijo, sin necesidad de usar margin */
+  list-style: none;
 }
 
 .nav-lista a {
-    color: #f5efe6;
-    text-decoration: none;
-    font-size: 14px; 
+  color: #f5efe6;
+  text-decoration: none; /* quita el subrayado que tienen los links por defecto */
+  font-size: 14px;
+}
+
+.principal {
+  display: flex;
+  gap: 32px; /* 32px de espacio entre la card y la galería */
+  padding: 32px;
+}
+
+/* position: relative → la etiqueta puede usar position: absolute dentro de esta card */
+.card {
+  position: relative;
+  width: 240px;
+  background-color: white;
+  border: 1px solid #e8ddd0;
+  border-radius: 8px;
+  overflow: hidden; /* recorta todo lo que sobresalga de la card, como las esquinas de la foto circular */
+}
+
+/* position: absolute → se sale del flujo y se ubica respecto a .card */
+.etiqueta {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #d4813a;
+  color: white;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.foto-contenedor {
+  position: relative;
+  background-color: #1a3a4a;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* pega los hijos al borde inferior del contenedor */
+}
+
+.foto {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover; /* recorta la imagen para que llene el espacio sin deformarse ni dejar espacios en blanco */
+  border: 3px solid #f5efe6;
+  margin-bottom: -20px;
+}
+
+.card-info {
+  padding: 28px 16px 16px;
+  text-align: center;
+}
+
+.nombre {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.rol {
+  font-size: 13px;
+  color: #8b6f5e;
+  margin-top: 4px;
+}
+
+.biografia {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.estadisticas {
+  display: flex;
+  justify-content: space-around; /* distribuye los hijos con espacio igual a los lados de cada uno */
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e8ddd0;
+}
+
+.estadistica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px; /* 2px de espacio entre el número y la etiqueta */
+}
+
+.numero {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.etiqueta-stat {
+  font-size: 11px;
+  color: #8b6f5e;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap; /* cuando las obras no caben en una fila, bajan automáticamente a la siguiente */
+  gap: 16px; /* 16px de espacio entre cada obra, tanto horizontal como vertical */
+  align-content: flex-start; /* cuando hay varias filas, las agrupa hacia arriba en vez de distribuirlas verticalmente */
+}
+
+.obra {
+  width: 200px;
+  background-color: white;
+  border: 1px solid #e8ddd0;
+  border-radius: 6px;
+  overflow: hidden; /* recorta las esquinas de la imagen para que respeten el border-radius de la card */
+}
+
+.obra img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover; /* recorta la imagen para que llene el espacio sin deformarse ni dejar espacios en blanco */
+  display: block;
+}
+
+.obra-titulo {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 10px 2px;
+}
+
+.obra-tecnica {
+  font-size: 12px;
+  color: #8b6f5e;
+  font-style: italic;
+  padding: 0 10px 10px;
+}
+
+.pie {
+  margin-top: 32px;
+  padding: 16px 32px;
+  background-color: #1a3a4a;
+  color: #e8ddd0;
+  font-size: 13px;
+  text-align: center;
 }
