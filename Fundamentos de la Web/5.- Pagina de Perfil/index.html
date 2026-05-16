@@ -11,13 +11,13 @@
 </head>
 <body>
     <header>
-        <h1>Perfil</h1>
+        <h1 onclick="cambiar_texto(this)">Perfil</h1>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="#" onclick="bienvenida()">Inicio</a></li>
                 <li><a href="#">Mi Perfil</a></li>
-                <li><a href="#">Encontrar Conexiones</a></li>
-                <li><button>Cerrar Sesión</button></li>
+                <li><a href="#" ondblclick="eliminar(this)">Encontrar Conexiones</a></li>
+                <li><button ondblclick="eliminar(this)" >Cerrar Sesión</button></li>
             </ul>
         </nav>
     </header>
@@ -43,5 +43,6 @@
 
         </aside>
     </main>
+    <script src="js/script.js" ></script>
 </body>
 </html>
