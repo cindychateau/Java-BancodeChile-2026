@@ -1,0 +1,68 @@
+* {
+    /* El asterisco aplica a TODOS los elementos de la página */
+    margin: 0;     /* Elimina el margen exterior por defecto del navegador */
+    padding: 0;    /* Elimina el relleno interior por defecto */
+    border: 0;     /* Elimina los bordes por defecto */
+}
+
+.contenedor {
+    /* Estilos para la caja principal que centra todo el contenido */
+    width: 750px;                    /* Ancho fijo de 750 píxeles */
+    margin: 0 auto;                  /* 0 arriba/abajo, auto a los lados: centra la caja */
+    background-color: azure;         /* Color de fondo celeste muy claro */
+    padding: 10px;                   /* Espacio interior entre el borde y el contenido */
+    border: 2px solid chocolate;     /* Borde de 2px, sólido, color chocolate */
+}
+
+h1 {
+    text-align: center;   /* Centra el texto del título */
+    margin: 10px;         /* Espacio de 10px alrededor del título */
+}
+
+.fila {
+    /* Estilos compartidos por las tres filas de imágenes */
+    display: flex;                    /* Activa Flexbox: organiza los hijos en fila */
+    justify-content: space-evenly;    /* Distribuye las imágenes con espacio uniforme */
+    align-items: center;              /* Alinea verticalmente al centro */
+    padding: 10px;                    /* Espacio interior dentro de cada fila */
+    margin-bottom: 5px;               /* Separación de 5px entre fila y fila */
+}
+
+#fila-1 {
+    background-color: coral;           /* Color de fondo de la primera fila */
+}
+
+#fila-2 {
+    background-color: deepskyblue;     /* Color de fondo de la segunda fila */
+}
+
+#fila-3 {
+    background-color: mediumaquamarine; /* Color de fondo de la tercera fila */
+}
+
+#fila-1 img {
+    /* Tamaño de las imágenes dentro de fila-1 */
+    width: 150px;
+    height: 200px;
+}
+
+#fila-2 img {
+    /* Tamaño de las imágenes dentro de fila-2 */
+    width: 200px;
+    height: 200px;
+}
+
+#fila-3 img {
+    /* Tamaño de las imágenes dentro de fila-3 */
+    width: 160px;
+    height: 180px;
+}
+
+footer {
+    background-color: beige;      /* Fondo beige para el pie de página */
+    text-align: center;           /* Texto centrado */
+    padding: 8px;                 /* Espacio interior */
+    font-size: 14px;              /* Tamaño de letra más pequeño */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Lista de fuentes en orden de preferencia: usa la primera que tenga el navegador */
+}
