@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de imágenes</title>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+    <!-- Caja principal que agrupa todo el contenido -->
+    <div class="contenedor">
+        <!-- Título principal de la página -->
+        <h1>Proyecto Imágenes</h1>
+        <!-- Fila 1: tiene la clase "fila" (estilos compartidos) y el id "fila-1" (estilo único) -->
+        <div class="fila fila-verde" id="fila-1">
+            <img src="https://octodex.github.com/images/original.png" alt="octodex">
+            <img src="https://octodex.github.com/images/jetpacktocat.png" alt="jetpacktocat">
+            <img src="https://octodex.github.com/images/welcometocat.png" alt="welcometocat">
+        </div>
+        <!-- Fila 2: misma clase "fila", pero id propio para tener color diferente -->
+        <div class="fila" id="fila-2">
+            <img src="https://octodex.github.com/images/constructocat2.jpg" alt="constructocat2">
+            <img src="https://octodex.github.com/images/droidtocat.png" alt="droidtocat">
+        </div>
+        <!-- Fila 3: igual estructura, distinto id y color -->
+        <div class="fila" id="fila-3">
+            <img src="https://octodex.github.com/images/dojocat.jpg" alt="dojocat">
+            <img src="https://octodex.github.com/images/strongbadtocat.png" alt="strongbadtocat">
+            <img src="https://octodex.github.com/images/spectrocat.png" alt="spectrocat">
+        </div>
+        <!-- Pie de página. Usar footer (y no div) es más descriptivo y semántico -->
+        <footer>Imágenes sacadas de internet</footer>
+    </div>
+</body>
+</html>

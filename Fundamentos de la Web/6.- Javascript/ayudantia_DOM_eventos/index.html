@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Librería Comunidad</title>
+
+        <!-- Enlazamos la hoja de estilos -->
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- defer hace que el JS se cargue DESPUÉS de que el HTML esté listo -->
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+
+        <!-- Barra de navegación superior -->
+        <header>
+            <span id="logo">📚 LibroClub</span>
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Explorar</a>
+                <a href="#">Mi lista</a>
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- Columna izquierda: perfil del usuario -->
+            <aside id="perfil">
+                <div id="avatar">👤</div>
+                <p id="nombre-usuario">Sofía Reyes</p>
+                <p id="descripcion-usuario">Lectora apasionada · 42 reseñas</p>
+            </aside>
+
+            <!-- Columna derecha: feed de reseñas -->
+            <section id="feed">
+                <h2>Reseñas recientes</h2>
+
+                <!-- Reseña 1 — Juego de Tronos
+                     Cada reseña es una "tarjeta" con:
+                     - El nombre del autor de la reseña
+                     - El texto de la reseña
+                     - Un contador de likes y un botón -->
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <span class="autor">Camila V.</span>
+                        <div class="likes-area">
+                            <!-- Este span muestra el número de likes.
+                                 Le damos una clase para encontrarlo con querySelector -->
+                            <span class="contador">0</span> like(s)
+                            <!-- El botón llama a la función darLike() al hacer clic -->
+                            <button class="btn-like" onclick="darLike(this)">♥ Me gusta</button>
+                        </div>
+                    </div>
+                    <p class="texto-resena">
+                        "Juego de Tronos" es una montaña rusa de emociones. 
+                        George R.R. Martin no tiene piedad con sus personajes, y eso lo hace imposible de soltar. 
+                        Nunca confíes en nadie en Westeros.
+                    </p>
+                </div>
+
+                <!-- Reseña 2 — Star Wars -->
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <span class="autor">Tomás R.</span>
+                        <div class="likes-area">
+                            <span class="contador">0</span> like(s)
+                            <button class="btn-like" onclick="darLike(this)">♥ Me gusta</button>
+                        </div>
+                    </div>
+                    <p class="texto-resena">
+                        "Heir to the Empire" de Timothy Zahn es lo mejor que le pasó al universo expandido de Star Wars. 
+                        El Gran Almirante Thrawn es el villano más inteligente que existe en la galaxia.
+                    </p>
+                </div>
+
+                <!-- Reseña 3 — Harry Potter -->
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <span class="autor">Valentina M.</span>
+                        <div class="likes-area">
+                            <span class="contador">0</span> like(s)
+                            <button class="btn-like" onclick="darLike(this)">♥ Me gusta</button>
+                        </div>
+                    </div>
+                    <p class="texto-resena">
+                        "Harry Potter y el Prisionero de Azkaban" es el mejor libro de la saga sin discusión. 
+                        El giro final de Sirius Black y Lupin me dejó sin palabras la primera vez que lo leí.
+                    </p>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 LibroClub · Hecho con ♥ por lectores</p>
+        </footer>
+
+    </body>
+</html>

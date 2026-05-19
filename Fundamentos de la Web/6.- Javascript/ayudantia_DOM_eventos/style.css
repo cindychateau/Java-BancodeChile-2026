@@ -1,0 +1,171 @@
+/* Reset básico: eliminamos márgenes y paddings por defecto
+   que los navegadores aplican a los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+    font-family: Georgia, serif;
+    background-color: #f5f0e8;
+    color: #2c2c2c;
+    min-height: 100vh;
+}
+
+/* Barra de navegación superior */
+header {
+    background-color: #1a1a2e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+}
+
+#logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Links del menú de navegación */
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Contenedor principal: dos columnas con flexbox */
+main {
+    display: flex;
+    gap: 32px;
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Columna izquierda: tarjeta de perfil */
+#perfil {
+    width: 180px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    height: fit-content;
+    border: 1px solid #e0d8cc;
+}
+
+#avatar {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+
+#nombre-usuario {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+#descripcion-usuario {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* Columna derecha: feed de reseñas */
+#feed {
+    flex: 1;
+}
+
+#feed h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+    border-bottom: 2px solid #1a1a2e;
+    padding-bottom: 8px;
+}
+
+/* Cada tarjeta de reseña */
+.tarjeta {
+    background-color: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    border: 1px solid #e0d8cc;
+}
+
+/* Fila superior de la tarjeta: nombre + likes */
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.autor {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Zona del contador y el botón, alineados en fila */
+.likes-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+/* El número de likes */
+.contador {
+    font-weight: bold;
+    color: #1a1a2e;
+    font-size: 14px;
+}
+
+/* Texto de la reseña */
+.texto-resena {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    font-style: italic;
+}
+
+/* Botón de like */
+.btn-like {
+    background-color: #e8c84a;
+    color: #1a1a2e;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-like:hover {
+    background-color: #d4b43a;
+}
+
+/* Pequeña animación al hacer clic */
+.btn-like:active {
+    transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
