@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos_perfil.css" />
+    <title>Perfil</title>
+  </head>
+
+  <body>
+    <!-- <body> contiene TODO lo que el usuario puede ver en la página -->
+
+    <!--  BARRA DE NAVEGACIÓN  -->
+    <nav>
+      <!-- <nav> es una etiqueta semántica: le dice al navegador "aquí está el menú de navegación" -->
+
+      <div class="nav-contenedor">
+        <!-- div con clase "nav-contenedor": agrupa los elementos del nav para aplicarles Flexbox en el CSS -->
+
+        <a class="nav-logo" href="#">Avatar</a>
+        <!-- <a> es un enlace. href="#" significa "por ahora no va a ningún lado" (placeholder) -->
+        <!-- class="nav-logo" permite darle un estilo especial a este enlace en el CSS -->
+
+        <ul class="nav-links">
+          <!-- <ul> = "unordered list" = lista sin orden (con bullets por defecto, quitados en el CSS) -->
+          <!-- Usamos <ul> + <li> para el menú porque semánticamente ES una lista de links -->
+
+          <li><a href="#">Inicio</a></li>
+          <!-- <li> = "list item" = cada ítem de la lista -->
+          <!-- Dentro va un <a> para que sea clickeable -->
+
+          <li><a href="#">Mi perfil</a></li>
+          <li><a href="#">Encontrar Conexiones</a></li>
+        </ul>
+
+        <a href="#" class="btn-cerrar">Cerrar Sesión</a>
+        <!-- Este enlace actúa visualmente como un botón gracias a los estilos CSS -->
+        <!-- class="btn-cerrar" le da el estilo de botón rojo -->
+      </div>
+    </nav>
+
+    <!--  CONTENIDO PRINCIPAL  -->
+    <div class="contenedor-principal">
+      <!-- Este div agrupa las dos columnas. En el CSS tiene display:flex para ponerlas lado a lado -->
+
+      <!--  COLUMNA IZQUIERDA  -->
+      <div class="columna-izquierda">
+        <!-- Ocupa más espacio (flex:7). Contiene la tarjeta de perfil y la de entrenamiento -->
+
+        <!-- TARJETA DE PERFIL -->
+        <div class="tarjeta-perfil">
+          <!-- Contenedor con fondo oscuro, bordes dorados y esquinas redondeadas (todo definido en CSS) -->
+
+          <div class="perfil-cover"></div>
+          <!-- Banda decorativa de color verde en la parte superior de la tarjeta (como el "banner" de LinkedIn) -->
+
+          <div class="perfil-avatar-banner">
+            <!-- Este div posiciona el avatar encima del cover con margin-top negativo -->
+
+            <img
+              src="https://www.looper.com/img/gallery/the-untold-truth-of-toph-beifong-from-avatar-the-last-airbender/intro-1602094819.jpg"
+              alt="Foto de Toph Beifong"
+              class="perfil-avatar"
+            />
+            <!-- <img> muestra una imagen. Atributos importantes: -->
+            <!-- src = la URL o ruta de la imagen -->
+            <!-- alt = texto alternativo (importante para accesibilidad y si la imagen no carga) -->
+            <!-- class = para aplicar estilos CSS (aquí: forma circular, borde dorado) -->
+          </div>
+
+          <div class="perfil-info">
+            <!-- Sección con el texto del perfil: nombre, ubicación, descripción, botón -->
+
+            <h4>Toph Beifong</h4>
+            <!-- <h4> es un título de nivel 4. Los títulos van de h1 (más importante) a h6 (menos importante) -->
+            <!-- Aquí se usa h4 porque ya hay jerarquía de contenido superior implícita -->
+
+            <p class="ubicacion">Zaofu, Reino Tierra</p>
+            <!-- <p> = párrafo. class="ubicacion" le da el color y tamaño específico en el CSS -->
+
+            <p class="profesion">
+              Maestra Tierra | Maestra Metal | Bandida Ciega
+            </p>
+            <!-- Otro párrafo con una clase diferente para darle un estilo distinto al texto de profesión -->
+
+            <p class="descripcion">
+              Soy Toph Beifong, la mejor maestra tierra de todos los tiempos.
+              Aunque nací en una familia rica y sobreprotectora, nunca dejé que
+              nadie decidiera por mí. Soy ciega, pero eso jamás me hizo débil;
+              aprendí a sentir el mundo a través de la tierra y convertí eso en
+              mi mayor fortaleza. Me gusta decir las cosas de frente, no le temo
+              a los desafíos y siempre encuentro la forma de salir adelante…
+              incluso cuando el resto cree que es imposible. Además, fui quien
+              inventó el metalcontrol, así que sí, soy bastante increíble.
+            </p>
+            <!-- El texto largo de la bio. class="descripcion" le da el color suave y el line-height -->
+
+            <button class="btn-editar">Editar Perfil</button>
+            <!-- <button> es un elemento interactivo nativo del navegador -->
+            <!-- A diferencia del <a>, el botón no navega; ejecuta acciones (como abrir un formulario) -->
+          </div>
+        </div>
+        <!-- FIN tarjeta-perfil -->
+
+        <!-- TARJETA DE ENTRENAMIENTO -->
+        <div class="tarjeta-entrenamiento">
+          <!-- Segunda tarjeta de la columna izquierda, similar en estilo a la primera -->
+
+          <h5>Entrenamiento</h5>
+          <!-- <h5> = título de nivel 5. Menor jerarquía que h4, coherente con la estructura de la página -->
+
+          <p class="edu-titulo">Topos Topo - Maestros de la Tierra Salvaje</p>
+          <!-- Nombre de la institución con clase "edu-titulo" para texto más destacado -->
+
+          <p class="edu-fecha">100 AG - 102 AG</p>
+          <!-- Período de tiempo con clase "edu-fecha" para texto más pequeño y atenuado -->
+
+          <p class="edu-detalle">
+            Cinturón de piedra negra en control de tierra y metal
+          </p>
+          <!-- Detalle adicional, mismo estilo que la fecha -->
+        </div>
+        <!-- FIN tarjeta-entrenamiento -->
+      </div>
+      <!-- FIN columna-izquierda -->
+
+      <!--  COLUMNA DERECHA  -->
+      <div class="columna-derecha">
+        <!-- Ocupa menos espacio (flex:5). Contiene dos tarjetas laterales -->
+
+        <!-- TARJETA: SOLICITUDES DE CONEXIÓN -->
+        <div class="tarjeta-lateral">
+          <h6>Solicitudes de Conexión (2)</h6>
+          <!-- <h6> = el nivel de título más pequeño del HTML (6 niveles en total) -->
+
+          <!-- ÍTEM DE CONEXIÓN: Aang -->
+          <div class="conexion-item">
+            <!-- Un div por cada persona. Tiene display:flex para alinear avatar, nombre y botones -->
+
+            <div class="conexion-izquierda">
+              <!-- Agrupa el avatar y el nombre para que queden alineados horizontalmente -->
+
+              <img
+                src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2025/01/aang-from-avatar-the-last-airbender.jpg"
+                alt="Imagen de Aang"
+                class="conexion-avatar-soli"
+              />
+              <!-- Avatar con esquinas redondeadas cuadradas (border-radius:10px en CSS) -->
+              <!-- Diferente al avatar del perfil que es completamente circular -->
+
+              <span>Aang</span>
+              <!-- <span> es un contenedor en línea (inline), a diferencia de <div> que es bloque -->
+              <!-- Se usa aquí para el nombre porque no necesita ocupar toda la línea -->
+            </div>
+
+            <div class="conexion-botones">
+              <!-- Agrupa los dos botones de acción -->
+
+              <button class="btn-aceptar" title="Aceptar">✓</button>
+              <!-- title="Aceptar" muestra un tooltip al pasar el mouse encima -->
+              <button class="btn-rechazar" title="Rechazar">✕</button>
+            </div>
+          </div>
+          <!-- FIN ítem Aang -->
+
+          <!-- ÍTEM DE CONEXIÓN: Zuko -->
+          <div class="conexion-item">
+            <!-- Misma estructura que el ítem anterior, reutilizando las mismas clases CSS -->
+
+            <div class="conexion-izquierda">
+              <img
+                src="https://th.bing.com/th/id/R.07d1eb5d8ce7f6ccd68512e8896c3838?rik=5MHY6SomyG3MWA&riu=http%3a%2f%2fimg1.wikia.nocookie.net%2f__cb20121216130722%2fcaracteres%2fes%2fimages%2f6%2f63%2fZuko_fuego.jpg&ehk=CiUyb%2bX4pYSsVPVFbN0vflRyfWwJ7VCiXlMQrm7lArk%3d&risl=&pid=ImgRaw&r=0g"
+                alt="Imagen de Zuko"
+                class="conexion-avatar-soli"
+              />
+              <span>Zuko</span>
+            </div>
+            <div class="conexion-botones">
+              <button class="btn-aceptar" title="Aceptar">✓</button>
+              <button class="btn-rechazar" title="Rechazar">✕</button>
+            </div>
+          </div>
+          <!-- FIN ítem Zuko -->
+        </div>
+        <!-- FIN tarjeta solicitudes -->
+
+        <!-- TARJETA: CONEXIONES ESTABLECIDAS -->
+        <div class="tarjeta-lateral">
+          <!-- Misma clase que la tarjeta anterior: reutilizamos el mismo estilo visual -->
+
+          <h6>Tus Conexiones (500+)</h6>
+
+          <!-- En esta tarjeta los ítems solo tienen avatar y nombre, sin botones -->
+          <!-- Por eso usan "conexion-avatar" (circular) en vez de "conexion-avatar-soli" (cuadrada) -->
+
+          <div class="conexion-item">
+            <div class="conexion-izquierda">
+              <img
+                src="https://animesweet.com/wp-content/uploads/2021/06/avatar-the-last-airbender-katara-immortalata-nell-illustrazione-dell-artista-meder-taab-v3-523094-scaled.jpg"
+                alt="Imagen de Katara"
+                class="conexion-avatar"
+              />
+              <span>Katara</span>
+            </div>
+          </div>
+
+          <div class="conexion-item">
+            <div class="conexion-izquierda">
+              <img
+                src="https://static.wikia.nocookie.net/avatar/images/1/19/Sokka_alucinando.png/revision/latest?cb=20200229050945&path-prefix=es"
+                alt="Sokka"
+                class="conexion-avatar"
+              />
+              <span>Sokka</span>
+            </div>
+          </div>
+
+          <div class="conexion-item">
+            <div class="conexion-izquierda">
+              <img
+                src="https://static0.srcdn.com/wordpress/wp-content/uploads/2020/12/Suki-in-Avatar--The-Last-Airbender.jpg"
+                alt="Suki"
+                class="conexion-avatar"
+              />
+              <span>Suki</span>
+            </div>
+          </div>
+
+          <div class="conexion-item">
+            <div class="conexion-izquierda">
+              <img
+                src="https://facts.net/wp-content/uploads/2023/09/16-facts-about-iroh-avatar-the-last-airbender-1693651766.jpg"
+                alt="Iroh"
+                class="conexion-avatar"
+              />
+              <span>Iroh</span>
+            </div>
+          </div>
+
+          <div class="conexion-item">
+            <div class="conexion-izquierda">
+              <img
+                src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/06/Avatar-Ty-Le.jpg"
+                alt="Ty Lee"
+                class="conexion-avatar"
+              />
+              <span>Ty Lee</span>
+            </div>
+          </div>
+
+          <div class="conexion-item">
+            <div class="conexion-izquierda">
+              <img
+                src="https://vignette.wikia.nocookie.net/villains/images/3/37/Mai_Avatar.jpg/revision/latest?cb=20110213162307"
+                alt="Mai"
+                class="conexion-avatar"
+              />
+              <span>Mai</span>
+            </div>
+          </div>
+        </div>
+        <!-- FIN tarjeta conexiones -->
+      </div>
+      <!-- FIN columna-derecha -->
+    </div>
+    <!-- FIN contenedor-principal -->
+  </body>
+  <!-- FIN del body: todo el contenido visible termina aquí -->
+</html>
+<!-- FIN del documento HTML -->

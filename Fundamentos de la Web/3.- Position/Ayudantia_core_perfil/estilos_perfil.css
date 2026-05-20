@@ -1,0 +1,362 @@
+/*  IMPORTACIÓN DE FUENTES */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap");
+/* @import trae fuentes externas de Google Fonts para usarlas en nuestra página */
+/* Cinzel: fuente con estilo clásico/medieval (usada para títulos) */
+/* Lato: fuente moderna y legible (usada para el texto general) */
+/* wght@400;700 = cargamos el peso normal (400) y negrita (700) de cada fuente */
+
+
+/*  RESET BÁSICO  */
+
+* {
+  /* El asterisco (*) es el selector universal: aplica a TODOS los elementos de la página */
+  margin: 0;   /* Elimina el espacio exterior por defecto que los navegadores agregan a las etiquetas */
+  padding: 0;  /* Elimina el espacio interior por defecto */
+  border: 0;   /* Elimina bordes por defecto (útil en inputs y otros elementos de formulario) */
+}
+/* Este "reset" asegura que todos los navegadores partan de la misma base visual */
+
+
+/*  ESTILOS GLOBALES DEL BODY  */
+
+body {
+  background-color: #1a120b; /* Color de fondo de toda la página: café muy oscuro */
+  font-family: "Lato", sans-serif;
+  /* font-family define la fuente del texto */
+  /* "Lato" es la fuente principal; sans-serif es el respaldo si Lato no carga */
+  color: #f0e6d3; /* Color del texto por defecto: crema/beige claro */
+  min-height: 100vh;
+  /* min-height: 100vh → la página siempre ocupa al menos el 100% de la altura de la pantalla */
+  /* vh = "viewport height" (altura visible del navegador) */
+}
+
+
+/*  BARRA DE NAVEGACIÓN  */
+
+nav {
+  background-color: #2e1a0e; /* Fondo del nav: café oscuro, un poco más claro que el body */
+  border-bottom: 2px solid #c8860a;
+  /* border-bottom dibuja solo el borde inferior */
+  /* 2px = grosor | solid = línea continua | #c8860a = color dorado */
+}
+
+.nav-contenedor {
+  display: flex;
+  /* Flexbox convierte este div en un contenedor flexible */
+  /* Sus hijos (logo, links, botón) se alinean en fila horizontal por defecto */
+  align-items: center; /* Centra los elementos verticalmente dentro del nav */
+  padding: 12px 32px;
+  /* padding: arriba/abajo izquierda/derecha */
+  /* 12px de espacio vertical, 32px de espacio horizontal (a los costados) */
+  gap: 24px; /* Espacio de 24px entre cada elemento hijo del flex */
+}
+
+.nav-logo {
+  font-family: "Cinzel", serif; /* Fuente especial solo para el logo */
+  color: #e8a520; /* Dorado brillante */
+  font-size: 20px;
+  letter-spacing: 1px; /* Separa levemente las letras para un efecto más elegante */
+  text-decoration: none; /* Quita el subrayado que tienen los enlaces <a> por defecto */
+}
+
+.nav-links {
+  display: flex; /* Los ítems de la lista quedan en fila horizontal */
+  list-style: none; /* Elimina los puntos (bullets) de la lista */
+  gap: 24px; /* Espacio entre cada ítem del menú */
+  margin-left: auto;
+  /* margin-left: auto empuja toda la lista hacia la derecha */
+  /* Es un truco de Flexbox para separar el logo (izquierda) de los links (derecha) */
+}
+
+.nav-links a {
+  color: #c8a97a; /* Color dorado apagado para los links del menú */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.nav-links a:hover {
+  /*  "Hover" significa "pasar el mouse por encima" de un elemento
+   * sin hacer clic. Es el momento en que el cursor flota sobre algo.
+   *
+   * En CSS, :hover es una PSEUDO-CLASE: una palabra especial que
+   * representa un ESTADO del elemento, no el elemento en sí.
+   *
+   * La sintaxis siempre es:
+   *     selector:hover { propiedad: valor; }  */
+  color: #e8a520; /* Al pasar el mouse, el link cambia de dorado apagado a dorado brillante */
+}
+
+.btn-cerrar {
+  background-color: #8b1a1a; /* Rojo oscuro */
+  color: #f0e6d3; /* Texto crema para contraste */
+  border: none;
+  border-radius: 4px; /* Esquinas ligeramente redondeadas */
+  padding: 6px 14px; /* Espacio interno: 6px arriba/abajo, 14px a los costados */
+  cursor: pointer; /* Cambia el cursor del mouse a "manito" al pasar encima */
+  font-family: "Lato", sans-serif; /* Se especifica porque los <a> y <button> pueden heredar fuentes distintas */
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-cerrar:hover {
+  /* Hover del botón "Cerrar Sesión" → el fondo pasa de rojo oscuro a rojo más claro */
+  /* Le indica visualmente al usuario que ese elemento es clickeable */
+  background-color: #b02020;
+}
+
+
+/*  LAYOUT PRINCIPAL (COLUMNAS) */
+
+.contenedor-principal {
+  display: flex; /* Las dos columnas se posicionan en fila con Flexbox */
+  gap: 24px; /* Espacio entre la columna izquierda y derecha */
+  align-items: flex-start;
+  /* flex-start: cada columna solo ocupa la altura que necesita */
+  /* Sin esto, ambas columnas tendrían la misma altura (la del más alto) */
+  max-width: 1100px;
+  /* Limita el ancho máximo del contenido: evita que se estire demasiado en pantallas grandes */
+  margin: 32px auto;
+  /* margin: arriba/abajo izquierda/derecha */
+  /* 32px de espacio arriba y abajo | auto en los costados → centra el contenedor horizontalmente */
+}
+
+.columna-izquierda {
+  flex: 7;
+  /* flex es un shorthand (atajo) de flex-grow */
+  /* flex:7 significa que esta columna ocupa 7 "partes" del espacio disponible */
+  /* Como la derecha tiene flex:5, la proporción es 7:5 (izquierda más ancha) */
+  display: flex;
+  flex-direction: column; /* Las tarjetas dentro de esta columna se apilan verticalmente */
+  gap: 16px; /* Espacio entre las tarjetas */
+}
+
+.columna-derecha {
+  flex: 5; /* Ocupa 5 partes del espacio (más angosta que la izquierda) */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/*  TARJETA DE PERFIL */
+
+.tarjeta-perfil {
+  background-color: #2e1a0e; /* Fondo café oscuro */
+  border-radius: 10px; /* Esquinas redondeadas */
+  border: 1px solid #c8860a; /* Borde dorado delgado alrededor de toda la tarjeta */
+  overflow: hidden;
+  /* Oculta cualquier contenido que sobresalga de la tarjeta */
+  /* Necesario para que el .perfil-cover respete el border-radius de las esquinas superiores */
+}
+
+.perfil-cover {
+  background-color: #3b5323; /* Verde oscuro: la banda decorativa superior (como el banner de LinkedIn) */
+  height: 130px; /* Altura fija de la banda */
+}
+
+.perfil-avatar-banner {
+  margin-top: -55px;
+  /* Truco: margen negativo para que el avatar "suba" y se superponga sobre el cover */
+  /* -55px = la mitad del avatar (que mide 100px) más un poco de espacio */
+  padding: 0 20px; /* Espacio a los costados para que el avatar no quede pegado al borde */
+}
+
+.perfil-avatar {
+  width: 100px;
+  height: 100px; /* Tamaño cuadrado de 100x100px antes de aplicar la forma circular */
+  border-radius: 50%; /* 50% convierte el cuadrado en un círculo perfecto */
+  border: 4px solid #c8860a; /* Borde dorado alrededor del avatar */
+  object-fit: cover;
+  /* object-fit: cover hace que la imagen llene el espacio sin deformarse */
+  /* Si la imagen no es cuadrada, recorta los bordes para que quepa */
+  display: block; /* Evita el espacio extra que los navegadores agregan debajo de las imágenes */
+}
+
+.perfil-info {
+  padding: 8px 19px 19px;
+  /* padding con 3 valores: arriba | izquierda/derecha | abajo */
+  /* 8px arriba (justo debajo del avatar), 19px a los costados, 19px abajo */
+}
+
+.perfil-info h4 {
+  /* Selector descendiente: aplica SOLO a los <h4> que estén DENTRO de .perfil-info */
+  font-family: "Cinzel", serif; /* Fuente clásica para el nombre */
+  color: #e8a520; /* Dorado brillante */
+  margin-bottom: 4px; /* Pequeño espacio debajo del nombre */
+}
+
+.ubicacion {
+  color: #a08050; /* Dorado apagado/marrón para texto secundario */
+  font-size: 14px; /* Texto más pequeño que el cuerpo (el cuerpo usa el tamaño por defecto del navegador, ~16px) */
+  margin-bottom: 4px;
+}
+
+.profesion {
+  color: #c8a97a; /* Dorado medio: más visible que la ubicación pero menos que el nombre */
+  font-size: 14px;
+  margin-bottom: 10px; /* Más espacio antes de la descripción larga */
+}
+
+.descripcion {
+  font-size: 14px;
+  color: #d4c4a8; /* Crema suave para el texto largo */
+  line-height: 1.6;
+  /* line-height controla el espacio entre líneas */
+  /* 1.6 = 1.6 veces el tamaño de la fuente → más espacio entre líneas, más fácil de leer */
+}
+
+.btn-editar {
+  background: none; /* Sin color de fondo (transparente) */
+  border: 1px solid #c8860a; /* Solo borde dorado visible */
+  color: #e8a520; /* Texto dorado */
+  font-size: 13px;
+  padding: 4px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  margin-top: 8px; /* Separa el botón del texto de descripción */
+}
+
+.btn-editar:hover {
+  /* Hover del botón "Editar Perfil" */
+  /* En reposo: fondo transparente + borde dorado */
+  /* En hover:  fondo dorado sólido + texto oscuro */
+  /* Este contraste "invertido" es un patrón muy común en botones outline */
+  background-color: #c8860a;
+  color: #1a120b;
+}
+
+
+/*  TARJETA DE ENTRENAMIENTO */
+
+.tarjeta-entrenamiento {
+  background-color: #2e1a0e;
+  border-radius: 10px;
+  border: 1px solid #c8860a;
+  padding: 16px; /* Espacio interno uniforme en los 4 lados */
+  /* Misma estética que .tarjeta-perfil pero con padding en vez de overflow */
+}
+
+.tarjeta-entrenamiento h5 {
+  font-family: "Cinzel", serif;
+  color: #e8a520;
+  font-weight: 700; /* Negrita */
+  margin-bottom: 12px; /* Separa el título del contenido de abajo */
+}
+
+.edu-titulo {
+  color: #c8a97a;
+  font-weight: 700; /* Negrita para destacar el nombre de la institución */
+  margin-bottom: 4px;
+}
+
+.edu-fecha {
+  font-size: 13px; /* Texto más pequeño para información secundaria */
+  color: #a08050;
+  margin-bottom: 4px;
+}
+
+.edu-detalle {
+  font-size: 13px;
+  color: #a08050; /* Mismo estilo que la fecha: información secundaria/complementaria */
+}
+
+
+/*  TARJETAS LATERALES (columna derecha) */
+
+.tarjeta-lateral {
+  background-color: #2e1a0e;
+  border-radius: 10px;
+  border: 1px solid #c8860a;
+  padding: 16px;
+  /* Misma base visual que las otras tarjetas: coherencia de diseño en toda la página */
+}
+
+.tarjeta-lateral h6 {
+  font-family: "Cinzel", serif;
+  color: #e8a520;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.conexion-item {
+  display: flex; /* Pone el avatar+nombre a la izquierda y los botones a la derecha */
+  align-items: center; /* Centra verticalmente todo dentro del ítem */
+  justify-content: space-between;
+  /* space-between: empuja el primer elemento al extremo izquierdo y el último al derecho */
+  /* Así el avatar/nombre queda a la izquierda y los botones a la derecha */
+  border-bottom: 1px solid #3d2510; /* Línea divisoria entre ítems */
+  padding: 8px 0; /* Espacio arriba y abajo de cada ítem */
+  color: #c8a97a;
+}
+
+.conexion-item:last-child {
+  /* :last-child es una pseudo-clase: aplica al último elemento .conexion-item del contenedor */
+  border-bottom: none; /* El último ítem no necesita línea divisoria debajo */
+}
+
+.conexion-izquierda {
+  display: flex;
+  align-items: center; /* Avatar y nombre alineados verticalmente al centro */
+  gap: 10px; /* Espacio entre el avatar y el texto del nombre */
+}
+
+.conexion-avatar-soli {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px; /* Esquinas redondeadas (no circular) → estilo "tarjeta" */
+  object-fit: cover;
+  border: 2px solid #6b4c11; /* Borde dorado oscuro */
+}
+/* Se usa para las SOLICITUDES de conexión (Aang, Zuko) */
+
+.conexion-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%; /* Completamente circular → estilo "foto de perfil" */
+  object-fit: cover;
+  border: 2px solid #6b4c11;
+}
+/* Se usa para las CONEXIONES establecidas (Katara, Sokka, etc.) */
+/* La diferencia visual entre los dos tipos de avatar ayuda a distinguir los contextos */
+
+.conexion-botones {
+  display: flex;
+  gap: 8px; /* Espacio entre el botón aceptar y el botón rechazar */
+}
+
+.btn-aceptar,
+.btn-rechazar {
+  /* Se pueden aplicar estilos a múltiples selectores a la vez separándolos con coma */
+  width: 34px;
+  height: 34px;
+  border-radius: 50%; /* Botones circulares */
+  background: none; /* Transparentes por defecto */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el símbolo ✓ o ✕ dentro del círculo */
+}
+
+.btn-aceptar {
+  border: 2px solid #5a8a2a; /* Borde verde */
+  color: #5a8a2a; /* Símbolo verde */
+}
+
+.btn-aceptar:hover {
+  /* Hover del botón aceptar → se rellena de verde, símbolo cambia a blanco */
+  /* El mismo patrón: en reposo es "hueco" (solo borde), en hover se "llena" */
+  background-color: #5a8a2a;
+  color: #fff;
+}
+
+.btn-rechazar {
+  border: 2px solid #8b1a1a; /* Borde rojo oscuro */
+  color: #8b1a1a;
+}
+
+.btn-rechazar:hover {
+  /* Hover del botón rechazar → mismo patrón que el de aceptar, pero en rojo */
+  background-color: #8b1a1a;
+  color: #fff;
+}
