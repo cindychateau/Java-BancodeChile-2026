@@ -7,3 +7,5 @@ Cada que creemos un repositorio seguir los siguientes pasos:
 
 Cada vez que hagamos un cambio:
 2, 3, 5
+
+:)
