@@ -1,0 +1,9 @@
+Cada que creemos un repositorio seguir los siguientes pasos:
+1) git init : Inicializa una carpeta como un repositorio localmente
+2) git add . : Agrega todos los archivos nuevos y modificados
+3) git commit -m "Mensaje para el commit": Genera punto de guardado
+4) git remote add origin url-del-github : Enlaza repositorio remoto con repositorio local
+5) git push -u origin master | git push -u origin main : Empuja todos los cambios
+
+Cada vez que hagamos un cambio:
+2, 3, 5
