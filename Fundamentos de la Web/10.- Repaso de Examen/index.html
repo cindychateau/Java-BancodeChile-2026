@@ -11,65 +11,71 @@
         <h1>Tiempo Local</h1>
         <nav>
             <ul class="lista-ciudades">
-                <li><a href="#">Buenos Aires</a></li>
-                <li><a href="#">Ciudad de México</a></li>
-                <li><a href="#">Santiago</a></li>
-                <li><a href="#">Sao Paulo</a></li>
-                <li><a href="#">Quito</a></li>
+                <li><a href="#" onclick="seleccionar_ciudad(this)" >Buenos Aires</a></li>
+                <li><a href="#" onclick="seleccionar_ciudad(this)" >Ciudad de México</a></li>
+                <li><a href="#" onclick="seleccionar_ciudad(this)" >Santiago</a></li>
+                <li><a href="#" onclick="seleccionar_ciudad(this)" >Sao Paulo</a></li>
+                <li><a href="#" onclick="seleccionar_ciudad(this)" >Quito</a></li>
             </ul>
         </nav>
         <form action="#">
             <label for="grados">Mostrar temperatura en:</label>
-            <select name="" id="grados">
+            <select name="" id="grados" onchange="cambio_temperatura()" >
                 <option>C</option>
                 <option>F</option>
             </select>
         </form>
     </header>
     <main>
-        <h2>Buenos Aires</h2>
+        <h2 id="titulo_ciudad">Buenos Aires</h2>
+        <p>
+            La temperatura se está mostrando en: <span id="tipo_temp">C</span>
+        </p>
         <section id="semana">
             <div class="card">
                 <img src="img/some_clouds.png" alt="nublado">
                 <h3>Hoy</h3>
                 <p>Nublado</p>
                 <p>22<span class="rojo">C</span> 15<span class="azul">C</span></p>
-                <button class="boton_temperatura">Ver Temperatura</button>
+                <button class="boton_temperatura" onclick="cambiar_boton(this)" >Ver Temperatura</button>
             </div>
             <div class="card">
                 <img src="img/some_clouds.png" alt="nublado">
                 <h3>Mañana</h3>
                 <p>Nublado</p>
                 <p>22<span class="rojo">C</span> 15<span class="azul">C</span></p>
-                <button class="boton_temperatura">Ver Temperatura</button>
+                <button class="boton_temperatura" onclick="cambiar_boton(this)" >Ver Temperatura</button>
             </div>
             <div class="card">
                 <img src="img/some_clouds.png" alt="nublado">
                 <h3>Miércoles</h3>
                 <p>Nublado</p>
                 <p>22<span class="rojo">C</span> 15<span class="azul">C</span></p>
-                <button class="boton_temperatura">Ver Temperatura</button>
+                <button class="boton_temperatura"onclick="cambiar_boton(this)" >Ver Temperatura</button>
             </div>
             <div class="card">
                 <img src="img/some_clouds.png" alt="nublado">
                 <h3>Hoy</h3>
                 <p>Nublado</p>
                 <p>22<span class="rojo">C</span> 15<span class="azul">C</span></p>
-                <button class="boton_temperatura">Ver Temperatura</button>
+                <button class="boton_temperatura" onclick="cambiar_boton(this)" >Ver Temperatura</button>
             </div>
             <div class="card">
                 <img src="img/some_clouds.png" alt="nublado">
                 <h3>Hoy</h3>
                 <p>Nublado</p>
                 <p>22<span class="rojo">C</span> 15<span class="azul">C</span></p>
-                <button class="boton_temperatura">Ver Temperatura</button>
+                <button class="boton_temperatura" onclick="cambiar_boton(this)" >Ver Temperatura</button>
             </div>
         </section>
+        <button id="cargar" onclick="cargar_reporte()">
+            Cargar Reporte
+        </button>
     </main>
     <footer>
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni ea mollitia laboriosam aliquam accusamus aliquid. <a href="#">Leer mas.</a>
-            <button>Acepto</button>
+            <button onclick="eliminar_cookies()">Acepto</button>
         </p>
     </footer>
     <script src="js/script.js"></script>
