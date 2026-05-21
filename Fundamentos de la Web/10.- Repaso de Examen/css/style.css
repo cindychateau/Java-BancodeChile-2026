@@ -33,3 +33,48 @@ nav a {
     color: white;
     text-decoration: none; /*Quita el subrayado*/
 }
+
+main {
+    text-align: center;
+}
+
+main h2 {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#semana {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid lightgray;
+    width: 250px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 10px 0;
+}
+
+.card img {
+   width: 100px; 
+}
+
+.card p {
+    margin: 15px 0;
+}
+
+.boton_temperatura {
+    padding: 10px;
+    background-color: cadetblue;
+}
+
+.rojo {
+    color: red;
+}
+
+.azul {
+    color: blue;
+}
