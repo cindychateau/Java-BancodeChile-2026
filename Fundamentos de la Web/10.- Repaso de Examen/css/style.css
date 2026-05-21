@@ -78,3 +78,19 @@ main h2 {
 .azul {
     color: blue;
 }
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer button {
+    background-color: yellow;
+    padding: 10px;
+    margin-left: 10px;
+}
