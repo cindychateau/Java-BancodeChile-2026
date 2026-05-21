@@ -1,0 +1,35 @@
+/*CSS RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*
+etiqueta
+.clase
+#id
+*/
+
+
+/*header {}*/
+.encabezado {
+    background-color: #3499ff;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+}
+
+/*nav ul {}*/
+.lista-ciudades {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none; /*Elimina viñeta*/
+    margin: 20px 0; /*Margin arriba y abajo de 20px*/
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /*Quita el subrayado*/
+}
