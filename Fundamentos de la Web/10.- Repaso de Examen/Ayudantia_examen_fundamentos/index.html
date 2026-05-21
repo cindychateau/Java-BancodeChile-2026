@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patitas a la obra</title>
+
+    <!-- Fuentes de Google: Fredoka One para títulos, Nunito para el texto general -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Nuestro archivo de estilos. Debe estar en la misma carpeta que index.html -->
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+
+    <div class="barra-superior">
+      🐾 Juntos hacemos la diferencia - ¡Adopta, no compres! 🐾
+    </div>
+
+    <!-- HEADER: contiene el logo, el botón donar y el contador del carrito -->
+    <header class="encabezado">
+      <div class="logo">Patitas <span>AlaObra</span></div>
+
+      <div class="acciones-encabezado">
+
+        <!-- onclick llama a la función donar() que está en script.js -->
+        <button class="boton-donar" onclick="donar()">
+          🐾 Donar al Refugio
+        </button>
+
+        <div class="carrito">
+          <span>Carrito</span>
+          <!-- id="contador-carrito" permite que JS encuentre este elemento
+               y actualice el número cuando se agrega un producto -->
+          <div class="contador-carrito" id="contador-carrito">0</div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- NAV: barra de navegación -->
+    <nav class="navegacion">
+      <a href="#">Inicio</a>
+      <a href="#">Adoptar</a>
+      <a href="#">Tienda</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <main>
+
+      <!-- Sección de mascotas en adopción -->
+      <div class="seccion">
+        <h2 class="titulo-seccion">Mascotas en Adopción</h2>
+
+        <div class="barra-filtro">
+          <label for="filtro-especie">Filtrar por especie:</label>
+
+          <!-- onchange se dispara cada vez que el usuario elige una opción distinta -->
+          <select id="filtro-especie" onchange="filtrarMascotas()">
+            <option value="todas">Todas las mascotas</option>
+            <option value="perro">Perros</option>
+            <option value="gato">Gatos</option>
+            <option value="erizo">Erizos</option>
+            <option value="pudu">Pudúes</option>
+            <option value="pinguino">Pingüinos</option>
+          </select>
+        </div>
+
+        <!-- El <span> tiene id para que JS pueda cambiar su texto al filtrar -->
+        <p class="texto-mostrando">
+          Mostrando: <span id="texto-mostrando">Todas las mascotas</span>
+        </p>
+
+        <div class="grilla-mascotas">
+
+          <!-- Tarjeta de mascota
+               data-tipo: indica la especie, JS lo usa para ocultar/mostrar al filtrar
+               id del contenedor-avatar: JS lo usa para encontrar el avatar al adoptar -->
+          <div class="tarjeta-mascota" data-tipo="perro">
+            <div class="contenedor-avatar" id="avatar-1">
+              <img
+                class="imagen-mascota"
+                src="https://cdn.wallpapersafari.com/63/49/MTK4PL.jpg"
+                alt="Foto de Luna"
+              />
+              <!-- Este div aparece encima de la foto cuando se adopta la mascota -->
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Luna</div>
+            <div class="etiqueta-tipo">Perro</div>
+            <p class="descripcion-mascota">
+              Labrador juguetona, 2 años, muy cariñosa con niños.
+            </p>
+            <!-- onclick pasa el id de la mascota y "this" (el propio botón) a adoptar() -->
+            <button class="boton-adoptar" onclick="adoptar(1, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="gato">
+            <div class="contenedor-avatar" id="avatar-2">
+              <img
+                class="imagen-mascota"
+                src="https://www.patasencasa.com/sites/default/files/2024-05/gato%20naranja_0.jpg"
+                alt="Foto de Carlota"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Carlota</div>
+            <div class="etiqueta-tipo">Gato</div>
+            <p class="descripcion-mascota">
+              Gata atigrada, 3 años, independiente y tranquila.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(2, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="erizo">
+            <div class="contenedor-avatar" id="avatar-3">
+              <img
+                class="imagen-mascota"
+                src="https://media.diariopopular.com.ar/p/4227995d8f602a1d9a4606b69f6fbc4d/adjuntos/143/imagenes/005/631/0005631695/erizo-puercoespinjpg.jpg"
+                alt="Foto de Spike"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Spike</div>
+            <div class="etiqueta-tipo">Erizo</div>
+            <p class="descripcion-mascota">
+              Erizo nocturno, 1 año, curioso y fácil de cuidar.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(3, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="pudu">
+            <div class="contenedor-avatar" id="avatar-4">
+              <img
+                class="imagen-mascota"
+                src="https://kenosus.com/wp-content/uploads/2023/04/343278654_563665299089074_7901602873233240503_n.jpg"
+                alt="Foto de Bambi"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Bambi</div>
+            <div class="etiqueta-tipo">Pudú</div>
+            <p class="descripcion-mascota">
+              Pudú rescatado, 4 años, necesita espacio verde.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(4, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="pinguino">
+            <div class="contenedor-avatar" id="avatar-5">
+              <img
+                class="imagen-mascota"
+                src="https://i.pinimg.com/736x/33/48/6b/33486b49a669b00d0777359105f2a14b.jpg"
+                alt="Foto de Chilly Willy"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Chilly Willy</div>
+            <div class="etiqueta-tipo">Pingüino</div>
+            <p class="descripcion-mascota">
+              Pingüino de Magallanes, rescatado en playa.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(5, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="perro">
+            <div class="contenedor-avatar" id="avatar-6">
+              <img
+                class="imagen-mascota"
+                src="https://cdn.britannica.com/84/232784-050-1769B477/Siberian-Husky-dog.jpg"
+                alt="Foto de Thor"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Thor</div>
+            <div class="etiqueta-tipo">Perro</div>
+            <p class="descripcion-mascota">
+              Husky siberiano, 1 año, necesita ejercicio diario.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(6, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="gato">
+            <div class="contenedor-avatar" id="avatar-7">
+              <img
+                class="imagen-mascota"
+                src="https://i.pinimg.com/736x/ee/b4/03/eeb403a92f59546a9e52b5dca2544b07.jpg"
+                alt="Foto de Nieve"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Nieve</div>
+            <div class="etiqueta-tipo">Gato</div>
+            <p class="descripcion-mascota">
+              Gato blanco, 5 años, le encanta el sol y la siesta.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(7, this)">
+              Adoptar
+            </button>
+          </div>
+
+          <div class="tarjeta-mascota" data-tipo="pudu">
+            <div class="contenedor-avatar" id="avatar-8">
+              <img
+                class="imagen-mascota"
+                src="https://th.bing.com/th/id/R.b74783231a1b039240fc7de65c5442c0?rik=wvRYHLV1cWx5bQ&pid=ImgRaw&r=0"
+                alt="Foto de Pupi"
+              />
+              <div class="overlay-adoptado">♥</div>
+            </div>
+            <div class="nombre-mascota">Pupi</div>
+            <div class="etiqueta-tipo">Pudú</div>
+            <p class="descripcion-mascota">
+              Pudú bebé rescatado, muy pequeño y tierno.
+            </p>
+            <button class="boton-adoptar" onclick="adoptar(8, this)">
+              Adoptar
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="divisor" />
+
+      <!-- Sección tienda del refugio -->
+      <div class="seccion">
+        <h2 class="titulo-seccion">Tienda del Refugio</h2>
+        <p class="subtitulo-seccion">
+          Cada compra ayuda a financiar el cuidado de nuestras mascotas 🐾
+        </p>
+
+        <div class="grilla-tienda">
+
+          <!-- Tarjeta de producto -->
+          <div class="tarjeta-producto">
+            <div class="emoji-producto">🏷️</div>
+            <div class="nombre-producto">Collar Artesanal</div>
+            <div class="precio-producto">$4.990</div>
+            <!-- onclick llama a agregarAlCarrito() que suma 1 al contador del header -->
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+              🛒 Agregar al Carrito
+            </button>
+          </div>
+
+          <div class="tarjeta-producto">
+            <div class="emoji-producto">🦴</div>
+            <div class="nombre-producto">Snack premium</div>
+            <div class="precio-producto">$2.990</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+              🛒 Agregar al carrito
+            </button>
+          </div>
+
+          <div class="tarjeta-producto">
+            <div class="emoji-producto">🧸</div>
+            <div class="nombre-producto">Juguete interactivo</div>
+            <div class="precio-producto">$6.990</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+              🛒 Agregar al carrito
+            </button>
+          </div>
+
+          <div class="tarjeta-producto">
+            <div class="emoji-producto">🛏️</div>
+            <div class="nombre-producto">Cama pequeña</div>
+            <div class="precio-producto">$12.990</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+              🛒 Agregar al carrito
+            </button>
+          </div>
+
+          <div class="tarjeta-producto">
+            <div class="emoji-producto">🧴</div>
+            <div class="nombre-producto">Champú natural</div>
+            <div class="precio-producto">$3.490</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+              🛒 Agregar al carrito
+            </button>
+          </div>
+
+          <div class="tarjeta-producto">
+            <div class="emoji-producto">👕</div>
+            <div class="nombre-producto">Polera solidaria</div>
+            <div class="precio-producto">$9.990</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+              🛒 Agregar al carrito
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <div>
+        <h4>Patitas a la Obra</h4>
+        <p>Av. Pedro Aguirre Cerda #456</p>
+        <p>Lautaro, Chile</p>
+        <p>Tel: +56 9 9030 3456</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <a href="#">Inicio</a>
+        <a href="#">Adoptar</a>
+        <a href="#">Tienda</a>
+        <a href="#">Nosotros</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="#">info@patitasalaobra.cl</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+
+    <div class="pie-copyright">
+      © 2026 Patitas a la Obra - Todos los derechos reservados
+    </div>
+
+    <!-- El script va AL FINAL del body para que el HTML ya esté cargado
+         cuando JavaScript intente buscar los elementos -->
+    <script src="script.js"></script>
+  </body>
+</html>

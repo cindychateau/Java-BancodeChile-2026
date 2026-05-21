@@ -1,0 +1,440 @@
+/* Patitas a la Obra — Estilos CSS */
+
+/* Se aplica a todos los elementos de la página */
+* {
+  margin: 0;             /* elimina el margen exterior por defecto */
+  padding: 0;            /* elimina el relleno interior por defecto */
+  border: 0;             /* elimina el borde por defecto */
+}
+
+body {
+  font-family: 'Nunito', sans-serif; /* fuente principal de toda la página */
+  background: #fdf6ee;               /* fondo beige cálido */
+  color: #3a2e1e;                    /* color de texto por defecto, marrón oscuro */
+}
+
+/* Barra superior */
+.barra-superior {
+  background: #f4a942;
+  color: #3a2e1e;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px; /* espacio extra entre cada letra */
+  padding: 6px;
+}
+
+/* Encabezado */
+.encabezado {
+  background: #fff8ef;
+  border-bottom: 2px solid #f4a942;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo a la izquierda, acciones a la derecha */
+}
+
+.logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  color: #e07b1a;
+  letter-spacing: 1px;
+}
+
+/* La segunda palabra del logo ("AlaObra") va en verde */
+.logo span {
+  color: #3a9e5f;
+}
+
+.acciones-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* espacio entre el botón donar y el carrito */
+}
+
+/* Botón donar */
+.boton-donar {
+  background: #3a9e5f;
+  color: #fff;
+  border: none;
+  border-radius: 24px; /* bordes redondeados, aspecto de píldora */
+  padding: 9px 22px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;          /* el cursor se convierte en manito al pasar */
+  transition: background 0.2s, transform 0.1s; /* el hover y active se ven suaves */
+}
+
+.boton-donar:hover {
+  background: #2d7d4a; /* verde más oscuro al pasar el mouse */
+}
+
+.boton-donar:active {
+  transform: scale(0.97); /* se achica un poco al hacer click */
+}
+
+/* Carrito */
+.carrito {
+  background: #fff3e0;
+  border: 2px solid #f4a942;
+  border-radius: 50px;
+  padding: 8px 18px 8px 14px; /* arriba, derecha, abajo, izquierda */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3a2e1e;
+}
+
+/* Círculo naranja con el número del carrito */
+.contador-carrito {
+  background: #e07b1a;
+  color: #fff;
+  border-radius: 50%;      /* 50% hace que el div sea un círculo perfecto */
+  width: 22px;
+  height: 22px;            /* mismo valor que width para que sea círculo */
+  display: flex;
+  align-items: center;     /* centra el número verticalmente */
+  justify-content: center; /* centra el número horizontalmente */
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+/* JS agrega esta clase para agrandar el contador cuando sube el número */
+.contador-carrito.agrandado {
+  transform: scale(1.4); /* lo agranda a un 140% de su tamaño original */
+}
+
+/* Navegación */
+.navegacion {
+  background: #e07b1a;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.navegacion a {
+  color: #fff;
+  text-decoration: none;  /* quita el subrayado de los enlaces */
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.navegacion a:hover {
+  background: rgba(255, 255, 255, 0.15); /* blanco con 15% de opacidad */
+}
+
+/* Secciones de contenido */
+.seccion {
+  padding: 32px;
+  max-width: 1100px; /* la sección no puede ser más ancha de 1100px */
+  margin: 0 auto;    /* auto a los lados centra el elemento horizontalmente */
+}
+
+.titulo-seccion {
+  font-family: 'Fredoka One', cursive;
+  font-size: 24px;
+  color: #e07b1a;
+  margin-bottom: 6px;
+}
+
+.subtitulo-seccion {
+  font-size: 14px;
+  color: #7a6040;
+  margin-bottom: 20px;
+}
+
+/* Barra de filtro */
+.barra-filtro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap; /* si no cabe en una línea, los elementos bajan a la siguiente */
+}
+
+.barra-filtro label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a6040;
+}
+
+.barra-filtro select {
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 2px solid #f4a942;
+  background: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #3a2e1e;
+  cursor: pointer;
+  outline: none; /* quita el borde azul que aparece al hacer click en el select */
+}
+
+.texto-mostrando {
+  font-size: 15px;
+  color: #7a6040;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* El <span> dentro del párrafo (ej: "Perros") va en naranja */
+.texto-mostrando span {
+  color: #e07b1a;
+  font-weight: 700;
+}
+
+/* Grilla de mascotas */
+.grilla-mascotas {
+  display: grid;
+  /* auto-fill: crea tantas columnas como quepan en el ancho disponible
+     minmax(200px, 1fr): cada columna tiene mínimo 200px y máximo el espacio libre */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta de mascota */
+.tarjeta-mascota {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid #f0dfc0;
+  padding: 24px 16px 16px;
+  display: flex;
+  flex-direction: column; /* apila los elementos hijos en columna */
+  align-items: center;    /* los centra horizontalmente */
+  gap: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.tarjeta-mascota:hover {
+  /* desplazamiento-x desplazamiento-y difuminado color */
+  box-shadow: 0 4px 16px rgba(224, 123, 26, 0.12);
+}
+
+/* Contenedor del avatar: necesita position relative para que el overlay
+   se posicione encima de la foto con position absolute */
+.contenedor-avatar {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  transition: transform 0.2s ease; /* la animación de salto se ve suave */
+}
+
+.imagen-mascota {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;  /* recorta la imagen en forma de círculo */
+  object-fit: cover;   /* recorta la imagen para que llene el círculo sin deformarse */
+  border: 3px solid #f4a942;
+  display: block;      /* evita el pequeño espacio que los navegadores ponen bajo las imágenes */
+  background: #fff3e0; /* color que se ve mientras la imagen está cargando */
+}
+
+/* Capa semitransparente que aparece encima de la foto al adoptar */
+.overlay-adoptado {
+  position: absolute;  /* se posiciona relativo a .contenedor-avatar */
+  inset: 0;            /* equivale a top:0; right:0; bottom:0; left:0 — cubre todo el padre */
+  border-radius: 50%;
+  background: rgba(176, 190, 197, 0.55); /* gris con 55% de opacidad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+  opacity: 0;           /* invisible por defecto */
+  transition: opacity 0.3s; /* aparece de forma suave */
+  pointer-events: none; /* el overlay no intercepta los clicks del mouse */
+}
+
+/* Cuando JS agrega .adoptado al contenedor-avatar, estos estilos se activan */
+.contenedor-avatar.adoptado .imagen-mascota {
+  border-color: #b0bec5;
+  filter: grayscale(60%); /* desatura los colores un 60%, efecto blanco y negro parcial */
+}
+
+.contenedor-avatar.adoptado .overlay-adoptado {
+  opacity: 1; /* hace visible el overlay con el corazón */
+}
+
+.nombre-mascota {
+  font-family: 'Fredoka One', cursive;
+  font-size: 18px;
+  color: #3a2e1e;
+}
+
+.etiqueta-tipo {
+  font-size: 12px;
+  background: #fff3e0;
+  color: #e09b1a;
+  border-radius: 12px;
+  padding: 3px 12px;
+  font-weight: 700;
+  text-transform: uppercase; /* convierte el texto a mayúsculas */
+  letter-spacing: 0.5px;
+}
+
+.descripcion-mascota {
+  font-size: 13px;
+  color: #7a6040;
+  text-align: center;
+  line-height: 1.5; /* altura de línea: 1.5 veces el tamaño de la fuente */
+}
+
+/* Botón adoptar */
+.boton-adoptar {
+  background: #3a9e5f;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 28px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;   /* ocupa todo el ancho de la tarjeta */
+  margin-top: 4px;
+}
+
+/* :not(.adoptado) significa "solo si el botón NO tiene la clase adoptado"
+   así el hover y el active no funcionan una vez que ya se adoptó */
+.boton-adoptar:hover:not(.adoptado) {
+  background: #2d7d4a;
+}
+
+.boton-adoptar:active:not(.adoptado) {
+  transform: scale(0.97);
+}
+
+/* Cuando JS agrega la clase .adoptado, el botón se pone gris */
+.boton-adoptar.adoptado {
+  background: #b0bec5;
+  color: #fff;
+  cursor: default; /* el cursor vuelve a ser la flecha normal, sin manito */
+}
+
+/* Línea divisora entre secciones */
+.divisor {
+  border: none;
+  border-top: 2px dashed #f0dfc0; /* línea en guiones color beige */
+  margin: 80px 0 32px;
+}
+
+/* Grilla y tarjetas de la tienda */
+.grilla-tienda {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-producto {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid #f0dfc0;
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.emoji-producto {
+  font-size: 42px;
+  line-height: 1; /* evita espacio extra debajo del emoji */
+}
+
+.nombre-producto {
+  font-weight: 700;
+  font-size: 15px;
+  color: #3a2e1e;
+  text-align: center;
+}
+
+.precio-producto {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e07b1a;
+}
+
+.boton-agregar {
+  background: #e07b1a;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.boton-agregar:hover {
+  background: #c0641a;
+}
+
+.boton-agregar:active {
+  transform: scale(0.97);
+}
+
+/* Pie de página */
+.pie-pagina {
+  background: #3a2e1e;
+  color: #f0dfc0;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas de igual ancho */
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.pie-pagina h4 {
+  font-family: 'Fredoka One', cursive;
+  color: #f4a942;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.pie-pagina p,
+.pie-pagina a {
+  font-size: 13px;
+  color: #c8b99a;
+  line-height: 1.8;
+  text-decoration: none; /* quita el subrayado de los enlaces del footer */
+  display: block;        /* hace que cada enlace ocupe su propia línea */
+}
+
+.pie-pagina a:hover {
+  color: #f4a942;
+}
+
+.pie-copyright {
+  background: #2a2010;
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: #7a6040;
+}
+
+/* JS agrega esta clase a las tarjetas que NO coinciden con el filtro elegido */
+.oculta {
+  display: none; /* oculta el elemento como si no existiera en la página */
+}
+
+/* JS agrega .saltando para mover el avatar hacia arriba.
+   Después de 200ms la quita y el avatar baja solo gracias al transition de arriba. */
+.contenedor-avatar.saltando {
+  transform: translateY(-14px); /* mueve el elemento 14px hacia arriba */
+}
