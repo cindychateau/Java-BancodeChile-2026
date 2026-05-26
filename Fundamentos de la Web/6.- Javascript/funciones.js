@@ -44,3 +44,9 @@ let resultado = sumatoria(15, 16);
 console.log("El resultado de la operación es: "+resultado);
 
 console.log("El resultado de una seguna sumatoria es: "+ sumatoria(1, 2));
+
+function al_cuadrado(numero) {
+    return numero * numero;
+}
+
+let resultado_cuadrado = al_cuadrado(5);

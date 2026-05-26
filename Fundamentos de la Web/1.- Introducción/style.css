@@ -2,6 +2,12 @@
 Estilizar el HTML que tengamos
 */
 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 /*
 SELECTORES BÁSICOS
 

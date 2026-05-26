@@ -26,16 +26,16 @@
             <div id="tarjeta-usuario" class="tarjeta">
                 <div class="tarjeta-encabezado"></div>
                 <div class="tarjeta-cuerpo">
-                    <img src="img/CynthiaCastillo_linkedin.png" alt="Foto de Perfil" >
-                    <h2>Cynthia Castillo</h2>
-                    <p>
+                    <img src="img/CynthiaCastillo_linkedin.png" alt="Foto de Perfil" onmouseover="cambia_imagen(this)" onmouseout="regresa_imagen(this)" >
+                    <h2 id="nombre-perfil">Cynthia Castillo</h2>
+                    <p class="locacion-rol">
                         Monterrey, México <br>
                         Líder de Instrucción en Skillnest e Instructora del mejor grupo de Full Stack Java
                     </p>
                     <p>
                         Apasionada por la enseñanza, desarrolladora de profesión, alma de maestra.
                     </p>
-                    <a href="#">Editar Perfil</a>
+                    <a href="#" onclick="editar_perfil()">Editar Perfil</a>
                 </div>
             </div>
         </section>
