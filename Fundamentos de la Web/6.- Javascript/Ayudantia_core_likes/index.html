@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Network — Me gusta</title>
+        <link rel="stylesheet" href="estilos.css" />
+
+        
+    </head>
+    <body>
+
+        <!-- Barra superior -->
+        <header>Network</header>
+
+        <main>
+
+            <!-- Columna izquierda: perfil -->
+            <aside>
+                <div class="avatar">👤</div>
+                <p class="nombre-perfil">Adrien Desplatz</p>
+            </aside>
+
+            <!-- Columna derecha: feed de publicaciones -->
+            <section>
+                <h2>Your Feed</h2>
+
+                <!-- FORMA 1 usa: onclick="darLike(this)"
+                       → le pasa el botón, la función sube con parentElement
+
+                     FORMAS 2, 3 usan: onclick="darLike('contador-1')"
+                       → le pasa el id del span directamente -->
+
+                <!-- Publicación 1 -->
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <span class="autor">Linn O.</span>
+                        <div class="likes-area">
+                            <span id="contador-1" class="contador">0</span> like(s)
+                            <button class="btn-like" onclick="darLike(this)">Like</button>
+                            <!-- Formas 2, 3: onclick="darLike('contador-1')" -->
+                        </div>
+                    </div>
+                    <p class="texto-post">
+                        Acabo de configurar este nuevo bot de Discord, cuéntenme que opinan ustedes.
+                        <a href="#">link</a>
+                    </p>
+                </div>
+
+                <!-- Publicación 2 -->
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <span class="autor">Lina K.</span>
+                        <div class="likes-area">
+                            <span id="contador-2" class="contador">0</span> like(s)
+                            <button class="btn-like" onclick="darLike(this)">Like</button>
+                            <!-- Formas 2, 3: onclick="darLike('contador-2')" -->
+                        </div>
+                    </div>
+                    <p class="texto-post">
+                        Acabo de terminar este <a href="#">nuevo cómic</a>, denle un vistazo.
+                    </p>
+                </div>
+
+                <!-- Publicación 3 -->
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <span class="autor">Mateo H.</span>
+                        <div class="likes-area">
+                            <span id="contador-3" class="contador">0</span> like(s)
+                            <button class="btn-like" onclick="darLike(this)">Like</button>
+                            <!-- Formas 2, 3: onclick="darLike('contador-3')" -->
+                        </div>
+                    </div>
+                    <p class="texto-post">
+                        No puedo dejar de escuchar este <a href="#">álbum</a>. ¿A quién más le gusta?
+                    </p>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Network · Hecho con ♥</p>
+        </footer>
+        <script src="script1_definitivo.js" defer></script>
+    </body>
+</html>
