@@ -1,0 +1,173 @@
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* el padding no agranda el elemento, queda "adentro" */
+}
+
+/* ESTILOS DEL BODY (página completa) */
+body {
+  font-family: Arial, sans-serif; /* fuente general de toda la página */
+  background-color: #f0f0f0;      /* fondo gris clarito */
+}
+
+
+/* NAVBAR (barra de navegación) */
+nav {
+  background-color: #d9d9d9; /* fondo gris de la barra */
+  display: flex;             /* ponemos los elementos en fila */
+  align-items: center;       /* los centramos verticalmente */
+  justify-content: space-between; /* los separamos: logo | buscador | botón */
+  padding: 10px 20px;        /* espacio interno: arriba/abajo | izquierda/derecha */
+}
+
+/* Logo "Petlopedia" */
+nav .logo {
+  font-size: 1.4rem;   /* tamaño de texto grande */
+  font-weight: bold;   /* negrita */
+  color: #000;
+}
+
+/* Campo de búsqueda */
+nav input[type="text"] {
+  flex: 1;             /* ocupa todo el espacio disponible entre logo y botón */
+  margin: 0 20px;      /* separación a los lados */
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  border-radius: 4px;  /* bordes redondeados */
+  font-size: 0.95rem;
+}
+
+/* Botón "Iniciar sesión" */
+nav button#btn-sesion {
+  background-color: #0066cc; /* azul */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;           /* el cursor se convierte en manito al pasar */
+  font-size: 0.9rem;
+}
+
+/* Efecto hover: cambia de color cuando el mouse está encima */
+nav button#btn-sesion:hover {
+  background-color: #0055aa; /* azul más oscuro */
+}
+
+
+/* CONTENIDO PRINCIPAL
+   Flex en fila para tener dos columnas: definiciones | sidebar */
+.contenido {
+  display: flex;       /* columnas en fila */
+  gap: 20px;           /* espacio entre las dos columnas */
+  padding: 20px;
+  max-width: 1100px;   /* ancho máximo para no estirarse en pantallas grandes */
+  margin: 0 auto;      /* centra el contenido horizontalmente */
+}
+
+
+/* COLUMNA IZQUIERDA: contenedor de tarjetas */
+.definiciones {
+  flex: 3;             /* ocupa 3 partes del espacio (vs 1 parte del sidebar) */
+  display: flex;
+  flex-direction: column; /* apila las tarjetas una abajo de la otra */
+  gap: 16px;              /* espacio entre tarjetas */
+}
+
+
+/* TARJETA DE DEFINICIÓN */
+.tarjeta {
+  background-color: #fff;  /* fondo blanco */
+  border: 1px solid #ccc;  /* borde gris */
+  border-radius: 6px;      /* esquinas redondeadas */
+  padding: 16px 20px;      /* espacio interior */
+}
+
+/* Título de la tarjeta (ej: "Gato Atigrado") */
+.tarjeta h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 4px; /* pequeño espacio debajo */
+}
+
+/* Categoría gramatical en cursiva (ej: "sustantivo") */
+.tarjeta .tipo {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+/* Plural de la palabra */
+.tarjeta .plural {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Descripción larga de la mascota */
+.tarjeta p.descripcion {
+  font-size: 0.95rem;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+/* Botón "Me gusta" con borde dorado */
+.tarjeta button.btn-like {
+  background-color: #fff;
+  border: 2px solid #c8a800; /* borde dorado */
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Efecto hover: fondo amarillo clarito */
+.tarjeta button.btn-like:hover {
+  background-color: #fff8cc;
+}
+
+
+/* COLUMNA DERECHA: sidebar */
+.sidebar {
+  flex: 1; /* ocupa 1 parte del espacio (vs 3 del contenido) */
+}
+
+/* Panel blanco dentro del sidebar */
+.sidebar .panel {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+/* Texto "Petlopedia está definida por TI" */
+.sidebar .panel p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* La palabra "TI" en azul y negrita */
+.sidebar .panel p span {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+/* Botón "Agregar Definición" en verde */
+.sidebar .panel button#btn-agregar {
+  background-color: #28a745; /* verde */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%; /* ocupa todo el ancho del panel */
+}
+
+/* Hover: verde más oscuro */
+.sidebar .panel button#btn-agregar:hover {
+  background-color: #218838;
+}
