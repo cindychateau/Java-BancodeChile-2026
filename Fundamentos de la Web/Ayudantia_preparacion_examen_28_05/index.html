@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PudúLove</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+
+  
+  <body>
+
+
+    <!--  SIDEBAR  -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-texto">pudú<strong>love</strong></span>
+        <div class="logo-icono">
+          <img
+            src="https://i.pinimg.com/originals/e0/58/5f/e0585f2d3fce7489664d33561004a170.jpg"
+            alt="Logo pudúlove"
+            class="img-logo"
+          />
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-lista">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Subir Imagen</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Favoritos</a></li>
+          <li><a href="#">Recientes</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-botones">
+        <button class="btn-config">Configuración</button>
+        <button class="btn-cerrar" onclick="cerrarSesion()">
+          Cerrar Sesión
+        </button>
+      </div>
+
+      <p class="footer-texto">
+        Todos los derechos reservados<br />
+        pudúlove ®
+      </p>
+    </aside>
+
+
+    <!--  CONTENIDO PRINCIPAL  -->
+    <main class="contenido">
+      <!-- Barra superior -->
+      <header class="topbar">
+        <button class="btn-menu">☰</button>
+        <div class="buscador">
+          <input type="text" placeholder="Buscar..." />
+          <button class="btn-buscar">Buscar</button>
+        </div>
+      </header>
+
+      <!-- Hero -->
+      <section class="hero">
+        <h1>¡Únete y comparte tu amor por <strong>los pudús!</strong></h1>
+      </section>
+
+      <!-- Botones de categoría -->
+      <div class="categorias">
+        <button class="btn-categoria" onclick="cambiarColor(this)">
+          Crías
+        </button>
+        <button class="btn-categoria" onclick="cambiarColor(this)">
+          Juveniles
+        </button>
+        <button class="btn-categoria" onclick="cambiarColor(this)">
+          Adultos
+        </button>
+      </div>
+
+      <!-- Galería de imágenes -->
+      <section class="galeria">
+        <div class="tarjeta">
+          <div class="imagen-placeholder">
+            <img
+              src="https://aliveemployeesclub.com/wp-content/uploads/2019/02/Zoo-Pudu-Baby-Male-Tongue-Out-JEP_7112-1024x732.jpg"
+              alt="Pudú 1"
+              class="img-galeria"
+            />
+          </div>
+          <button class="btn-like" onclick="darLike(this)">
+            <span class="corazon">♥</span>
+            <span class="contador">2</span>
+          </button>
+        </div>
+
+        <div class="tarjeta">
+          <div class="imagen-placeholder">
+            <img
+              src="https://vetstreet-brightspot.s3.amazonaws.com/e3/f3/02468042498b8e8aebb523fdb830/Pudu-Bristol-Zoo-by-Bob-Pitchford-2.jpg"
+              alt="Pudú 2"
+              class="img-galeria"
+            />
+          </div>
+          <button class="btn-like" onclick="darLike(this)">
+            <span class="corazon">♥</span>
+            <span class="contador">2</span>
+          </button>
+        </div>
+
+        <div class="tarjeta">
+          <div class="imagen-placeholder">
+            <img
+              src="https://th.bing.com/th/id/R.b3a4c897877770eb8ed65ebfe9825144?rik=F4qoXZUYJwiRJA&pid=ImgRaw&r=0"
+              alt="Pudú 3"
+              class="img-galeria"
+            />
+          </div>
+          <button class="btn-like" onclick="darLike(this)">
+            <span class="corazon">♥</span>
+            <span class="contador">4</span>
+          </button>
+        </div>
+
+        <div class="tarjeta">
+          <div class="imagen-placeholder">
+            <img
+              src="https://i.pinimg.com/236x/14/7f/2a/147f2ab40972caac972f76cb4f02aafa.jpg"
+              alt="Pudú 4"
+              class="img-galeria"
+            />
+          </div>
+          <button class="btn-like" onclick="darLike(this)">
+            <span class="corazon">♥</span>
+            <span class="contador">6</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

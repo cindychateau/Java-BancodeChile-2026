@@ -1,0 +1,283 @@
+/*  Reset básico  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #d8f3dc;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 180px;
+  background-color: #ffffff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-right: 2px solid #b7e4c7;
+  min-height: 100vh;
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+}
+
+.logo-texto {
+  font-size: 1.4rem;
+  color: #52b788;
+  letter-spacing: -0.5px;
+}
+
+.logo-texto strong {
+  color: #2d6a4f;
+}
+
+.logo-icono {
+  font-size: 2rem;
+  margin-top: 4px;
+}
+
+/* Navegación */
+.nav-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-lista a {
+  text-decoration: none;
+  color: #2d6a4f;
+  font-size: 0.95rem;
+  display: block;
+  text-align: center;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.nav-lista a:hover {
+  color: #1b4332;
+  font-weight: bold;
+}
+
+/* Botones del sidebar */
+.sidebar-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-config {
+  background-color: #ffffff;
+  color: #2d6a4f;
+  border: 2px solid #2d6a4f;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.btn-config:hover {
+  background-color: #d8f3dc;
+}
+
+.btn-cerrar {
+  background-color: #2d6a4f;
+  color: #ffffff;
+  border: 2px solid #2d6a4f;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.btn-cerrar:hover {
+  background-color: #1b4332;
+}
+
+/* Footer sidebar */
+.footer-texto {
+  font-size: 0.7rem;
+  color: #888;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Topbar --- */
+.topbar {
+  background-color: #52b788;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-menu {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.buscador {
+  display: flex;
+  gap: 6px;
+}
+
+.buscador input {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  outline: none;
+  width: 200px;
+  background-color: #d8f3dc;
+  color: #1a1a1a;
+}
+
+.btn-buscar {
+  background-color: #2d6a4f;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* --- Hero --- */
+.hero {
+  background-color: #d8f3dc;
+  text-align: center;
+  padding: 32px 24px 16px;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.hero h1 strong {
+  color: #2d6a4f;
+}
+
+/* --- Botones de categoría --- */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.btn-categoria {
+  padding: 10px 28px;
+  border-radius: 30px;
+  border: 2px solid #2d6a4f;
+  background-color: #b7e4c7;
+  color: #2d6a4f;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-categoria:hover {
+  background-color: #52b788;
+  color: #ffffff;
+}
+
+
+/* --- Galería --- */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 32px;
+  justify-content: center;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Placeholder de imagen (reemplaza las X del wireframe) */
+.imagen-placeholder {
+  width: 160px;
+  height: 140px;
+  background-color: #b7e4c7;
+  border: 2px solid #52b788;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+
+/* --- Imágenes --- */
+.img-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.img-icono {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.img-galeria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* --- Botón de like --- */
+/* Al hacer click, el contador aumenta en 1 */
+.btn-like {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.btn-like:hover {
+  border-color: #52b788;
+  background-color: #d8f3dc;
+}
+
+
+.contador {
+  color: #1a1a1a;
+  font-weight: bold;
+}
