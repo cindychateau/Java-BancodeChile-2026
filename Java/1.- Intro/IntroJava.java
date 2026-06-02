@@ -25,7 +25,7 @@ public class IntroJava {
         int miNumeroEntero = 100;
         double pi = 3.14159;
         boolean feliz = true;
-        float numeroDecimal = 1.1;
+        //float numeroDecimal = 1.1;
         char unCaracter = 'X'; // 1 caracter
         char numChar = '1';
 
@@ -37,7 +37,52 @@ public class IntroJava {
 
         String cadena = "Buenos tardes a todas mis Compañeras";
         System.out.println(cadena.length());
-        //Ver más métodos de cadenas
+        //Métodos de cadena
+        char letra = cadena.charAt(5); //¿Qué caracter/letra está en esa posición?
+        System.out.println("Letra en posición 5:"+letra);
+
+        int indice1 = cadena.indexOf("Buenos"); // indexOf: regresa indice/posicion de la palabra enviada
+        System.out.println("Buenos:"+indice1);
+
+        int indice2 = cadena.indexOf("hola"); //Cuando NO existe la palabra en la cadena, regresa -1
+        System.out.println("hola:" + indice2); 
+
+        System.out.println(cadena.toUpperCase()); //Todas las letras las pone en mayúsculas
+        System.out.println(cadena.toLowerCase()); //Todas las letras las pone en minúsculas
+
+        String frase1 = "Mi nombre es:";
+        String frase2 = "Elena de Troya";
+        String fraseCompleta = frase1.concat(frase2); //concat: concatenar (pegar) 2 textos
+        System.out.println(fraseCompleta);
+
+        String x = "hola";
+        String y = "Hola";
+        System.out.println(x.equals(y)); //equals: true o false si el texto es o no igual
+        System.out.println(x.equalsIgnoreCase(y)); //Ignora si es mayúscula o minúscula
+
+        /*
+        RETO: Presentación
+        Crees un nuevo archivo (usando PascalCase)
+        En el nuevo archivo crees la clase (con el mismo nombre del archivo)
+        Crees el método main
+
+        Dentro del método main vas a crear las siguientes variables:
+        nombre
+        edad
+        pais
+        ciudad
+        hobby1
+        hobby2
+
+        Imprimas:
+        Hola, mi nombre es Cynthia Castillo
+        Tengo 34 años de edad
+        Soy de México y vivo en Monterrey
+        Me gusta mucho leer y ver series
+        
+         */
+
+
     }
 
 }
