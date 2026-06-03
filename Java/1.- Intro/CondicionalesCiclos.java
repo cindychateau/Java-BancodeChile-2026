@@ -1,3 +1,5 @@
+import java.util.Scanner; //Librería
+
 public class CondicionalesCiclos {
 
     public static void main(String[] args) {
@@ -87,6 +89,22 @@ public class CondicionalesCiclos {
             System.out.println("Entramos en el do-while");
             x++;
         } while(x < 5);
+
+        //Declarar variable teclado para ingresar info
+        Scanner teclado = new Scanner(System.in); 
+        System.out.println("Hola, ingresa tu nombre: ");
+        String nombre = teclado.nextLine(); //Captura es una línea de texto
+
+        System.out.println("Ingresa tu edad: ");
+        int edadPersona = teclado.nextInt(); //Captura un número entero
+
+        System.out.println("¡Ya me robe tu info, sé que eres "+nombre+" de edad "+edadPersona);
+
+        //nextLine -> Captura la línea completa de texto
+        //next -> Captura solo 1 palabra
+        //nextInt -> Captura un número entero
+        //nextDouble -> Captura un número con decimal
+        //nextBoolean -> Captura un booleano
 
     }
 
