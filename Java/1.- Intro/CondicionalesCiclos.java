@@ -65,6 +65,29 @@ public class CondicionalesCiclos {
                 break;
         }
 
+        /* BUCLES / CICLOS */
+        for(int i=0; i < 4; i++) {
+            System.out.println("¡hey!");
+        }
+
+        int n = 0;
+        while(n < 4) { // 0 < 4, 1 < 4, 2 < 4, 3 < 4
+            System.out.println("¡hola!"); //¡hola! ¡hola! ¡hola! ¡hola!
+            n++;// n = 1, n = 2, n = 3, n = 4
+        }
+
+        int x = 10;
+        while(x < 5) {
+            System.out.println("Entra al while de línea 80");
+            x++;
+        }
+
+        //Al menos se va a ejecutar 1 vez
+        do { //PRIMERO sin importar la condicional, ejecuta el código
+            System.out.println("Entramos en el do-while");
+            x++;
+        } while(x < 5);
+
     }
 
 }
