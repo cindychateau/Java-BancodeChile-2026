@@ -106,6 +106,60 @@ public class CondicionalesCiclos {
         //nextDouble -> Captura un número con decimal
         //nextBoolean -> Captura un booleano
 
+        /*
+        A - 100-90
+        B - 89-80
+        C - 79-70
+        D - 69 - 60
+        F - Calificaciones menores a 60
+
+        El usuario ingrese su calificación (1-100), respuesta vamos a dar la letra de esa calificación
+        EJ:
+        91
+        Tu calificación es: A
+
+        75
+        Tu calificación es: C
+        
+         */
+        //int calificacion = 81;
+        System.out.println("Ingresa la calificación: ");
+        int calificacion = teclado.nextInt();
+        if(calificacion <= 100 && calificacion >= 90) {
+            System.out.println("Tu calificación es: A");
+        } else if(calificacion >= 80) {
+            System.out.println("Tu calificación es: B");
+        } else if(calificacion >= 70) {
+            System.out.println("Tu calificación es: C");
+        } else if(calificacion >= 60) {
+            System.out.println("Tu calificación es: D");
+        } else {
+            System.out.println("Tu calificación es: F");
+        }
+
+
+
+
+        /*
+        Usuario ingrese un número e imprimir la tabla de multiplar de ese número 1-10
+
+        2
+        2x1 = 2
+        2x2 = 4
+        2x3 = 6
+        2x4 = 8
+        ...
+        2x10 = 20
+
+         */
+        // System.out.println("Ingresa el numero: ");
+        // int num = teclado.nextInt();//num = 8
+        int num = 4;
+        for(int j=1; j <= 10; j++) {
+            //4x1=4
+            System.out.println(num + "x" + j + "=" + (num*j));
+        }
+
     }
 
 }
