@@ -8,6 +8,8 @@ public class Funciones {
 
         int resultado = sumaDosNumeros(1, 2); //resultado = 3
         System.out.println(resultado);
+
+        int r2 = sumaDosNumeros(10, 25); //r2 = 35
     }
     
     //Alcance: public o private
@@ -20,9 +22,9 @@ public class Funciones {
         return "Hola mundo";
     } 
 
-    public static int sumaDosNumeros(int num1, int num2) { //num1 = 1, num2 = 2
-        int sumatoria = num1 + num2; //sumatoria = 1 + 2 = 3;
-        return sumatoria; //regresa 3
+    public static int sumaDosNumeros(int num1, int num2) { //num1 = 10, num2 = 25
+        int resultado = num1 + num2; //resultado = 10 + 25 = 35;
+        return resultado; //regresa 35
     }
 
     /* Crea una función llamada esPar que reciba un número y regrese true si el número es par y false si el número es impar */
