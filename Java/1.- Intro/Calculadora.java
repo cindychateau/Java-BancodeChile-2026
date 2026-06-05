@@ -23,4 +23,8 @@ public class Calculadora {
         return num1 + num2;
     }
 
+    public static void sumaImpresion(int num1, int num2) {
+        System.out.println("SUMA:"+(num1+num2));
+    }
+
 }
