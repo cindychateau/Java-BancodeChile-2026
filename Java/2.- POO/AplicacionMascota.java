@@ -20,6 +20,12 @@ public class AplicacionMascota {
 
         System.out.println("Edad de michi:"+michi.getEdad());
 
+        Mascota mascotaEnAdopcion = new Mascota("negro", "perro", 1, 5);
+
+        Mascota.imprimeTienda();
+
+        System.out.println("Tenemos "+Mascota.getCantidadMascotas()+" mascotitas");
+
     }
 
 }

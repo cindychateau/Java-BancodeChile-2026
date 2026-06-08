@@ -10,6 +10,10 @@ public class Mascota {
     private int edad;
     private double peso;
 
+    //static: es propio de la clase
+    private static String tiendaMascota = "Mascotas Felices CORP";
+    private static int cantidadMascotas = 0;
+
     //Método Constructor
     //this = miu
     //nombre = "Miu"
@@ -25,8 +29,19 @@ public class Mascota {
         this.especie = especie; //miu.especie = "gato"
         this.edad = edad; //miu.edad = 8
         this.peso = peso; //miu.peso = 4.5
+        cantidadMascotas++;
     }
 
+    //Sobrecarga: sobreescribiendo un método, pero con diferentes parámetros
+    public Mascota(String color, String especie, int edad, double peso) {
+        this.color = color;
+        this.especie = especie;
+        this.edad = edad;
+        this.peso = peso;
+        cantidadMascotas++;
+    }
+
+    //Normalmente 2 métodos constructores: 1 con todos los atributos, otro con 0 atributos
 
     //Getters y Setters
 
@@ -88,5 +103,15 @@ public class Mascota {
     public void maullar() {
         System.out.println(this.nombre+" hace miau!");
     }
+
+    //Método estático NO NECESITA de ningún objeto para ser llamado
+    public static void imprimeTienda() {
+        System.out.println("La tienda de mascotas se llama: "+tiendaMascota);
+    }
+
+    public static int getCantidadMascotas() {
+        return cantidadMascotas;
+    }
+
 
 }

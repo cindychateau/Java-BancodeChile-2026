@@ -14,4 +14,6 @@ public class Vehiculo {
         System.out.println("Modelo:"+this.modelo+" Marca:"+this.marca+" Ruedas:"+this.ruedas);
     }
 
+    /* public Vehiculo() {} */
+
 }
