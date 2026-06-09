@@ -12,6 +12,17 @@ public class Aplicacion {
 		
 		System.out.println("La marca del auto es:"+autoDeElena.getMarca());
 		
+		autoDeElena.acelerar();
+		autoDeElena.manejar();
+		autoDeElena.acelerar();
+		autoDeElena.desacelerar();
+		
+		//Bicicleta
+		Bicicleta biciDeJuana = new Bicicleta();
+		biciDeJuana.acelerar();
+		biciDeJuana.manejar();
+		biciDeJuana.desacelerar();
+		
 	}
 
 }

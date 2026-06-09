@@ -8,6 +8,11 @@ public class Vehiculo {
 	private String marca;
 	private String modelo;
 	
+	//private: SOLO en la clase donde se creó el atributo, se puede acceder a él
+	//public: Que cualquier archivo puede acceder a él
+	//protected: Solo en la clase y las clases hijas se puede acceder al atributo
+	protected int velocidad = 0; //Por defecto todos mis vehículos comienzan con velocidad 0
+	
 	public Vehiculo() {
 		//Constructor vacío
 	}

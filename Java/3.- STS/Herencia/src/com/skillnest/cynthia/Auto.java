@@ -1,6 +1,6 @@
 package com.skillnest.cynthia;
 
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo implements ManejarVehiculo {
 	
 	private String patente;
 
@@ -23,6 +23,18 @@ public class Auto extends Vehiculo {
 
 	public void setPatente(String patente) {
 		this.patente = patente;
+	}
+	
+	public void acelerar() {
+		System.out.println("Estamos pisando el acelerador.");
+		velocidad += 2;
+		System.out.println("Mi velocidad es de: "+velocidad);
+	}
+	
+	public void desacelerar() {
+		System.out.println("Estoy pisando el freno");
+		velocidad -= 2;
+		System.out.println("Mi velocidad es de: "+velocidad);
 	}
 	
 	
