@@ -43,9 +43,6 @@ SELECT mascotas.nombre, raza, trucos.nombre FROM mascotas
 INNER JOIN mascotas_trucos ON mascotas.id = mascotas_trucos.id_mascota
 INNER JOIN trucos ON trucos.id = mascotas_trucos.id_truco;
 
-
-
-
-
-
-
+SELECT mascotas.nombre AS nombre_mascota, raza, trucos.nombre AS nombre_truco FROM mascotas
+INNER JOIN mascotas_trucos ON mascotas.id = mascotas_trucos.id_mascota
+INNER JOIN trucos ON trucos.id = mascotas_trucos.id_truco;
