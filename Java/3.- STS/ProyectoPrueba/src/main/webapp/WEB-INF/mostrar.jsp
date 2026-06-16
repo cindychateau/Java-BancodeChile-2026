@@ -10,7 +10,7 @@
 <body>
 	
 	<h1>
-		<c:out value="${titulo}" />
+		${titulo}
 	</h1>
 	
 	<ul>
