@@ -3,7 +3,9 @@ package com.skillnest.cynthia.controladores;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 //localhost:8080/usuarios/ 
@@ -21,14 +23,42 @@ public class ControladorUsuarios {
 	public String mostrar(Model model) { //Model model permite enviar información del método hacia JSP
 		
 		//Crear una variable llamada titulo que tiene valor "Usuarios" y envío a JSP
-		model.addAttribute("titulo", "Usuarios"); //titulo = "Usuarios"
+		model.addAttribute("titulo", "Mostrar Usuarios"); //titulo = "Usuarios"
 		
-		String listaUsuarios[] = {"Elena de Troya", "Juana de Arco", "Pablo Picasso", "Pedro Páramo"};
+		String listaUsuarios[] = {"Elena de Troya", "Juana de Arco", "Pablo Picasso", "Pedro Páramo", "Eli Carta"};
 		
 		//En JSP: usuarios = {"Elena de Troya", "Juana de Arco", "Pablo Picasso", "Pedro Páramo"}
 		model.addAttribute("usuarios", listaUsuarios);
 		
 		return "mostrar.jsp"; //Al entrar a localhost:8080/usuarios/mostrar despliega mostrar.jsp
 	}
+	
+	//Ruta 1: Muestra el formulario
+	@GetMapping("/formulario") // localhost:8080/usuarios/formulario
+	public String formulario() {
+		return "formulario.jsp";
+	}
+	
+	//Ruta 2: Reciba la información
+	@PostMapping("/registrarUsuario")
+	public String registrarUsuario(@RequestParam(value="nombreUsuario") String nombre,
+								   @RequestParam(value="emailUsuario") String email) {
+		//nombre = "Elena de Troya"
+		//email = "elena@skillnest.com
+		System.out.println(nombre+" - "+email);
+		
+		//Validar info
+		//Guardar info
+		
+		return "redirect:/usuarios/bienvenida"; //REDIRECTS no llevan .jsp, ruta	
+		
+	}
+	
+	//Ruta 3: Redirección
+	@GetMapping("/bienvenida")
+	public String bievenida() {
+		return "bienvenida.jsp";
+	}
+	
 	
 }
