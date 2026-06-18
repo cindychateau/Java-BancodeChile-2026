@@ -5,23 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Libros</title>
+<title>Formulario</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 	<main class="container">
 		<div class="row">
 			<div class="col-6">
-				<ul>
-					<c:forEach items="${listaLibros}" var="libro">
-            
-			            <li>
-			            	<!-- a href="/libros/${libro.key}">${libro.key}</a-->
-			            	<a href="/libros/${libro.getKey()}">${libro.getKey()}</a>
-			            </li>
-			            
-			        </c:forEach>
-				</ul>
+				<h1>Nuevo Libro</h1>
+				<form action="/procesa/libro" method="POST" >
+					<input name="nombreLibro" class="form-control mb-3" placeholder="Nombre del Libro" >
+					<input name="nombreAutor" class="form-control mb-3" placeholder="Nombre del Autor" >
+					<input type="submit" class="btn btn-primary" value="Guardar Libro" >
+				</form>
 			</div>
 		</div>
 	</main>
