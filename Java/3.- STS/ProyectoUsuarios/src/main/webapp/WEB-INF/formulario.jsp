@@ -19,6 +19,7 @@
 					<input type="email" name="emailUsuario" class="form-control mt-3" placeholder="Ingrese su correo">
 					<input type="submit" class="btn btn-success mt-3" value="Registrar" >
 				</form>
+				<div class="text-danger">${error}</div>
 			</div>
 		</div>
 	</main>
