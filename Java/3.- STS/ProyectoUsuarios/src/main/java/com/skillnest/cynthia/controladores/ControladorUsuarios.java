@@ -54,6 +54,7 @@ public class ControladorUsuarios {
 		
 		//Validar info
 		if(nombre.equals("") || email.equals("")) {
+			//(nombrevariable, valor/mensaje de error)
 			flash.addFlashAttribute("error", "Todos los datos son obligatorios");
 			return "redirect:/usuarios/formulario";
 		}
