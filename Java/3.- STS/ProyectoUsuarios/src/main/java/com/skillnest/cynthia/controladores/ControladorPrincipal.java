@@ -5,10 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.skillnest.cynthia.modelos.Usuario;
 import com.skillnest.cynthia.servicios.Servicios;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class ControladorPrincipal {
@@ -23,6 +28,31 @@ public class ControladorPrincipal {
 		//Crea una variable en el jsp. ("nombreVariable", valorVariable)
 		model.addAttribute("usuarios", usuarios);
 		return "dashboard.jsp";
+	}
+	
+	//1.- Mostramos formulario
+	@GetMapping("/nuevo")
+	public String nuevo(@ModelAttribute("usuario") Usuario usuario) {
+		
+		//usuario = Usuario(nombre="", apellido="", email="");
+		
+		//@ModelAttribute crear un objeto vacío de Usuario y lo manda al jsp
+		
+		return "nuevo.jsp";
+	}
+	
+	//2.- Recibir la info
+	@PostMapping("/crear")
+	public String crear(@Valid @ModelAttribute("usuario") Usuario usuario, /*@Valid: valida la info del objeto*/
+						BindingResult result /*Encargado de regresar los errores*/) {
+		
+		if(result.hasErrors()) { //Si existen errores
+			return "nuevo.jsp"; //Muestra nuevo.jsp para que los errores se muestren
+		} else {
+			servicios.guardarUsuario(usuario);
+			return "redirect:/dashboard";
+		}
+		
 	}
 	
 	

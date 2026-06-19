@@ -23,7 +23,10 @@ public class Servicios {
 		return repoUsuarios.findById(id).orElse(null);
 	}
 	
-	//Guarde usuario (Viernes)
+	//Guarde usuario
+	public Usuario guardarUsuario(Usuario usuario) {
+		return repoUsuarios.save(usuario);
+	}
 	
 	//Elimine el usuario (Lunes)
 

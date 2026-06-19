@@ -31,7 +31,7 @@ public class Usuario {
 	@Size(min=2, max=60)
 	private String apellido;
 	
-	@NotNull
+	@NotNull //@NotEmpty
 	@Email //Valida que sea un correo electrónico correcto
 	private String email;
 	
