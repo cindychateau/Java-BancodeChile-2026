@@ -1,0 +1,48 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color:#f4f1ea;
+	margin: 0;
+	padding: 40px;
+}
+
+.contenedor {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 30px 40px;
+	border-radius:12px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+	color:  #c0392b;
+}
+
+h2{
+	color: #555;
+}
+
+a {
+	color: #c0392b;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.lista-recetas {
+	list-style:none;
+	padding: 0;
+}
+
+.lista-recetas li {
+	padding: 12px;
+	border-bottom: 1px solid #eee;
+}
+
+.mensaje-error {
+	color: #c0392b;
+	background-color: #fdecea;
+	padding: 15px;
+	border-radius: 8px;
+}
