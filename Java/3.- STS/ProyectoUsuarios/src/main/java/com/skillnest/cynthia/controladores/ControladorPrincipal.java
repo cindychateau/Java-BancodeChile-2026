@@ -61,11 +61,13 @@ public class ControladorPrincipal {
 							   Model model) {
 		//id = 5
 		
-		Usuario esteUsuario = servicios.obtenerUsuarioPorId(id);
+		Usuario esteUsuario = servicios.obtenerUsuarioPorId(id); //Obtengo el usuario en base al id
 		model.addAttribute("usuario", esteUsuario);
 		return "usuario.jsp";
 		
 	}
+	
+	//4 tipos de peticiones: GET (obtener datos o mostrar), POST (crear nuevos registros), DELETE (borrar registros), PUT (actualizar registros)
 	
 	
 	

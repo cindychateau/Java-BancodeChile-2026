@@ -20,7 +20,7 @@ public class Servicios {
 	
 	//Controlador: obtenerUsuarioPorId(5)
 	public Usuario obtenerUsuarioPorId(Long id) {
-		return repoUsuarios.findById(id).orElse(null);
+		return repoUsuarios.findById(id).orElse(null); //objeto Usuario
 	}
 	
 	//Guarde usuario
@@ -28,6 +28,10 @@ public class Servicios {
 		return repoUsuarios.save(usuario);
 	}
 	
-	//Elimine el usuario (Lunes)
+	//Elimine el usuario
+	//Controlador: eliminarUsuario(3)
+	public void eliminarUsuario(Long id) { //id = 3
+		repoUsuarios.deleteById(id); //llamo al repo para decirle que elimine al usuario 3
+	}
 
 }
