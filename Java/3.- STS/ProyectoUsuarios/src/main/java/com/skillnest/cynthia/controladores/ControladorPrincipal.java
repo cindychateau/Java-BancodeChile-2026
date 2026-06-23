@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -69,6 +70,28 @@ public class ControladorPrincipal {
 	
 	//4 tipos de peticiones: GET (obtener datos o mostrar), POST (crear nuevos registros), DELETE (borrar registros), PUT (actualizar registros)
 	
+	@DeleteMapping("/borrar/{id}") //localhost:8080/borrar/6
+	public String borrar(@PathVariable Long id) { //id = 6
+		servicios.eliminarUsuario(id); 
+		return "redirect:/dashboard";
+	}
+	
+	//Editar: mostramos el formulario CON la info del Usuario
+	@GetMapping("/editar/{id}") //localhost:8080/editar/6
+	public String editar(@PathVariable Long id, 
+						@ModelAttribute("usuario") Usuario usuario,
+						Model model) {
+		
+		//Obtenemos la información del objeto/registro usuario
+		Usuario esteUsuario = servicios.obtenerUsuarioPorId(id);
+		model.addAttribute("usuario", esteUsuario); //Sobreescribo al usuario vacío
+		
+		return "editar.jsp";
+	}
+	
+	
+	//Actualizar: recibimos la info y la guardamos (validemos la info)
+	//localhost:8080/actualizar/6
 	
 	
 }

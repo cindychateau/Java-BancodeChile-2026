@@ -29,9 +29,9 @@ public class Servicios {
 	}
 	
 	//Elimine el usuario
-	//Controlador: eliminarUsuario(3)
-	public void eliminarUsuario(Long id) { //id = 3
-		repoUsuarios.deleteById(id); //llamo al repo para decirle que elimine al usuario 3
+	//Controlador: eliminarUsuario(6)
+	public void eliminarUsuario(Long id) { //id = 6
+		repoUsuarios.deleteById(id); //llamo al repo para decirle que elimine al usuario 6
 	}
 
 }

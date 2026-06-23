@@ -37,6 +37,7 @@
 							<input type="hidden" name="_method" value="DELETE">
 							<input type="submit" value="Borrar" class="btn btn-danger" >
 						</form>
+						<a href="/editar/${usuario.id}" class="btn btn-info">Editar</a>
 					</td>
 				</tr>
 				</c:forEach>	
