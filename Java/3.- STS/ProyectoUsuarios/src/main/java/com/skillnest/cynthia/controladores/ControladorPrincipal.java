@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.skillnest.cynthia.modelos.Usuario;
 import com.skillnest.cynthia.servicios.Servicios;
@@ -92,6 +93,22 @@ public class ControladorPrincipal {
 	
 	//Actualizar: recibimos la info y la guardamos (validemos la info)
 	//localhost:8080/actualizar/6
+	@PutMapping("/actualizar/{id}") //IMPORTANTE: debe llamarse id para que se asigne al ModelAttribute
+	public String actualizar(@Valid @ModelAttribute("usuario") Usuario usuarioEditado,
+							BindingResult result) {
+		
+		if(result.hasErrors()) {
+			return "editar.jsp"; //para que se muestren los errores y que no cargue de 0 la página
+		} else {
+			servicios.guardarUsuario(usuarioEditado);
+			return "redirect:/dashboard"; //redireccionar a una ruta
+		}
+		
+	}
+	
+	
+	
+	
 	
 	
 }

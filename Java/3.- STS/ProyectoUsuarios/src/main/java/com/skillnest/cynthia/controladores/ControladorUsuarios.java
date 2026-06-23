@@ -52,6 +52,8 @@ public class ControladorUsuarios {
 		//email = "elena@skillnest.com
 		System.out.println(nombre+" - "+email);
 		
+		//Usuario nuevoUsuario = new Usuario(nombre, email);
+		
 		//Validar info
 		if(nombre.equals("") || email.equals("")) {
 			//(nombrevariable, valor/mensaje de error)

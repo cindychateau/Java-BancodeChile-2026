@@ -23,7 +23,7 @@ public class Servicios {
 		return repoUsuarios.findById(id).orElse(null); //objeto Usuario
 	}
 	
-	//Guarde usuario
+	//Guarde usuario: nuevos registros, ediciones de registros
 	public Usuario guardarUsuario(Usuario usuario) {
 		return repoUsuarios.save(usuario);
 	}

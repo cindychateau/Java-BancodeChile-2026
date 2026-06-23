@@ -18,4 +18,6 @@ public interface RepositorioCanciones extends CrudRepository<Cancion, Long> {
 	//List<Cancion> findByTitulo();
 	//List <Cancion> findByArtista();
 	
+	//List<Cancion> findByTituloOrderByArtistaAsc(); SELECT * FROM canciones WHERE titulo LIKE "rain" ORDER BY artista ASC
+	
 }

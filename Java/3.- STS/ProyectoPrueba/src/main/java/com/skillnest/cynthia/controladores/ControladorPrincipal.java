@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import com.skillnest.cynthia.modelos.Curso;
 import com.skillnest.cynthia.modelos.Usuario;
 import com.skillnest.cynthia.servicios.Servicios;
 
@@ -32,7 +33,10 @@ public class ControladorPrincipal {
 	   }
 	   
 	   @GetMapping("/nuevo")
-		public String nuevo(@ModelAttribute("usuario") Usuario usuario) {
+		public String nuevo(@ModelAttribute("usuario") Usuario usuario, Model model) {
+		   
+		   List<Curso> cursos = servicio.obtenerCursos();
+		   model.addAttribute("cursos", cursos);
 			
 			//@ModelAttribute crea un objeto vacío de Usuario y lo manda a nuevo.jsp
 			return "nuevo.jsp";
@@ -40,9 +44,14 @@ public class ControladorPrincipal {
 		
 		@PostMapping("/crear")
 		public String crear(@Valid @ModelAttribute("usuario") Usuario nuevoUsuario, /*@Valid: valida la info del objeto*/
-							BindingResult result /*Encargado de revisar los errores*/) {
+							BindingResult result, /*Encargado de revisar los errores*/
+							Model model) {
 			
 			if(result.hasErrors()) {
+				
+				List<Curso> cursos = servicio.obtenerCursos();
+				model.addAttribute("cursos", cursos);
+				
 				return "nuevo.jsp";
 			} else {
 				servicio.guardarUsuario(nuevoUsuario); //Guardar el objeto usuario que recibimos del formulario

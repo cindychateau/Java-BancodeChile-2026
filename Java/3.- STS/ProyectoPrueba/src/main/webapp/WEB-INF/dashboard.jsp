@@ -21,6 +21,7 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Email</th>
+					<th>Curso</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -30,6 +31,7 @@
 						<td>${usuario.nombre}</td>
 						<td>${usuario.apellido}</td>
 						<td>${usuario.email}</td>
+						<td>${usuario.curso.nombreCurso}</td>
 						<td>
 							<form action="/borrar/${usuario.id}" method="post" >
 								<!-- Forzando que la solicitud sea DELETE -->

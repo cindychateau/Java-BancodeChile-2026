@@ -28,6 +28,14 @@
 				<form:input class="form-control" path="email" placeholder="Ingresa tu email" />
 				<form:errors path="email" class="text-danger" />
 			</div>
+			<div>
+				<form:label path="curso" >Curso:</form:label>
+				<form:select path="curso" class="form-select">
+					<c:forEach items="${cursos}" var="curso" >
+						<form:option value="${curso.id}" >${curso.nombreCurso}</form:option>
+					</c:forEach>
+				</form:select>
+			</div>
 			<input type="submit" class="btn btn-info mt-3" value="Guardar Usuario">
 		</form:form>
 	</div>

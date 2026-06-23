@@ -4,11 +4,16 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -44,6 +49,11 @@ public class Usuario {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
+	
+	@JsonBackReference(value="cursos-json") //Si quiero que se muestre esa info
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="curso_id") //Llave foránea
+	private Curso curso;
 
 	public Usuario() {
 	}
@@ -96,7 +106,17 @@ public class Usuario {
 		this.updatedAt = updatedAt;
 	}
 	
-	// Métodos marcados con las anotaciones de ciclo de vida
+	
+	
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
+	   // Métodos marcados con las anotaciones de ciclo de vida
 	   @PrePersist
 	   protected void onCreate() {
 	       this.createdAt = new Date();

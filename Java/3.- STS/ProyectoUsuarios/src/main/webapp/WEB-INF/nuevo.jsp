@@ -14,13 +14,13 @@
 		<h1>Nuevo Usuario</h1>
 		<form:form action="/crear" method="POST" modelAttribute="usuario">
 			<div>
-				<form:label path="nombre">Nombre:</form:label>
+				<form:label path="nombre">Nombre:</form:label> <!-- setNombre -->
 				<form:input path="nombre" class="form-control" />
 				<form:errors path="nombre" class="text-danger" />
 			</div>
 			<div>
 				<form:label path="apellido">Apellido:</form:label>
-				<form:input path="apellido" class="form-control" />
+				<form:input path="apellido" class="form-control" /> <!-- setApellido -->
 				<form:errors path="apellido" class="text-danger" />
 			</div>
 			<div>
