@@ -11,11 +11,7 @@ import com.skillnest.cynthia.repositorios.RepositorioUsuarios;
 @Service
 public class Servicios {
 	 	@Autowired
-	   private final RepositorioUsuarios repositorioUsuario;
-	 	
-	 	public Servicios(RepositorioUsuarios repositorioUsuario) {
-	        this.repositorioUsuario = repositorioUsuario;
-	    }
+	   private RepositorioUsuarios repositorioUsuario;
 
 	   public List<Usuario> obtenerTodosLosUsuarios() {
 	       return this.repositorioUsuario.findAll();
@@ -25,7 +21,7 @@ public class Servicios {
 	       return this.repositorioUsuario.findById(id).orElse(null);
 	   }
 
-	   public Usuario crearUsuario(Usuario usuario) {
+	   public Usuario guardarUsuario(Usuario usuario) {
 	       return this.repositorioUsuario.save(usuario);
 	   }
 
