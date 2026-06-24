@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skillnest.cynthia.modelos.Curso;
+import com.skillnest.cynthia.modelos.Hobby;
 import com.skillnest.cynthia.modelos.Usuario;
 import com.skillnest.cynthia.repositorios.RepositorioCursos;
+import com.skillnest.cynthia.repositorios.RepositorioHobbies;
 import com.skillnest.cynthia.repositorios.RepositorioUsuarios;
 
 @Service
@@ -18,6 +20,9 @@ public class Servicios {
 	
 	@Autowired
 	private RepositorioCursos repoCursos;
+	
+	@Autowired
+	private RepositorioHobbies repoHobbies;
 	
 	public List<Usuario> obtenerTodosLosUsuarios() {
 		return repoUsuarios.findAll();
@@ -43,5 +48,17 @@ public class Servicios {
 	public List<Curso> obtenerTodosLosCursos(){
 		return repoCursos.findAll();
 	}
+	
+	public List<Hobby> obtenerTodosLosHobbies() {
+		return repoHobbies.findAll();
+	}
+	
+	public Hobby obtenerHobbyPorId(Long id) {
+		return repoHobbies.findById(id).orElse(null);
+	}
+	
+	//Asignar a un usuario un hobby
+	
+	//Quitar a un usuario un hobby
 
 }
