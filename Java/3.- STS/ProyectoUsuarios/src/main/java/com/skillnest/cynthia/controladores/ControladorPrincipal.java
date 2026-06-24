@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import com.skillnest.cynthia.modelos.Curso;
 import com.skillnest.cynthia.modelos.Usuario;
 import com.skillnest.cynthia.servicios.Servicios;
 
@@ -35,11 +36,15 @@ public class ControladorPrincipal {
 	
 	//1.- Mostramos formulario
 	@GetMapping("/nuevo")
-	public String nuevo(@ModelAttribute("usuario") Usuario usuario) {
+	public String nuevo(@ModelAttribute("usuario") Usuario usuario, 
+						Model model) {
 		
 		//usuario = Usuario(nombre="", apellido="", email="");
 		
 		//@ModelAttribute crear un objeto vacío de Usuario y lo manda al jsp
+		
+		List<Curso> listaCursos = servicios.obtenerTodosLosCursos();
+		model.addAttribute("cursos", listaCursos);
 		
 		return "nuevo.jsp";
 	}
@@ -47,9 +52,14 @@ public class ControladorPrincipal {
 	//2.- Recibir la info
 	@PostMapping("/crear")
 	public String crear(@Valid @ModelAttribute("usuario") Usuario usuario, /*@Valid: valida la info del objeto*/
-						BindingResult result /*Encargado de regresar los errores*/) {
+						BindingResult result, /*Encargado de regresar los errores*/
+						Model model) {
 		
 		if(result.hasErrors()) { //Si existen errores
+			//Vuelve a mandar el listado, por si hay un error, se vuelvan a cargar los cursos
+			List<Curso> listaCursos = servicios.obtenerTodosLosCursos();
+			model.addAttribute("cursos", listaCursos);
+			
 			return "nuevo.jsp"; //Muestra nuevo.jsp para que los errores se muestren
 		} else {
 			servicios.guardarUsuario(usuario);

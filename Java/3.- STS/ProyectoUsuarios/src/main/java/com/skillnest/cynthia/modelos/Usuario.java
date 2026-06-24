@@ -102,6 +102,8 @@ public class Usuario {
 		this.updatedAt = updatedAt;
 	}
 	
+	
+
 	public Curso getCurso() {
 		return curso;
 	}
