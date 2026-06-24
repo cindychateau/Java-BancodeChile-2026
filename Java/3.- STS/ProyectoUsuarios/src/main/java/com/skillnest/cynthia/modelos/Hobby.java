@@ -14,35 +14,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 
-@Entity //Es un objeto de mi base de datos
-@Table(name="usuarios") //Nombre de la tabla
-public class Usuario {
+@Entity
+@Table(name="hobbies")
+public class Hobby {
 	
 	@Id //Primary Key o Clave primaria
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //AI: Autoincremento
 	private Long id;
 	
-	@NotNull //No puede ser vacío
-	@Size(min=2, max=15, message="El nombre debe tener entre 2 y 15 caracteres")
-	private String nombre;
+	@NotBlank
+	private String pasatiempo;
 	
-	@NotNull
-	@Size(min=2, max=60)
-	private String apellido;
-	
-	@NotNull //@NotEmpty
-	@Email //Valida que sea un correo electrónico correcto
-	private String email;
-	
-	//2026-06-18
 	@Column(updatable=false) // Este atributo no es puede actualizar
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
@@ -50,30 +37,15 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="curso_id") //Clave foránea
-	private Curso curso;
-	
 	@ManyToMany(fetch=FetchType.LAZY)
 	@JoinTable(
 			name="usuarios_tienen_hobbies",
-			joinColumns = @JoinColumn(name="usuario_id"),
-			inverseJoinColumns = @JoinColumn(name="hobby_id")
+			joinColumns = @JoinColumn(name="hobby_id"),
+			inverseJoinColumns = @JoinColumn(name="usuario_id")
 			)
-	private List<Hobby> hobbies;
+	private List<Usuario> usuarios;
 	
-	//Constructor vacío
-	public Usuario() {
-		
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	public Hobby() {} //Constructor vacío
 
 	public Long getId() {
 		return id;
@@ -83,20 +55,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getPasatiempo() {
+		return pasatiempo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setPasatiempo(String pasatiempo) {
+		this.pasatiempo = pasatiempo;
 	}
 
 	public Date getCreatedAt() {
@@ -114,23 +78,13 @@ public class Usuario {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public Curso getCurso() {
-		return curso;
-	}
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
 	
-	
-
-	public List<Hobby> getHobbies() {
-		return hobbies;
+	public List<Usuario> getUsuarios() {
+		return usuarios;
 	}
 
-	public void setHobbies(List<Hobby> hobbies) {
-		this.hobbies = hobbies;
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	//ANTES de crear un nuevo registro
