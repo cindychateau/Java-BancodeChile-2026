@@ -97,6 +97,9 @@ public class ControladorPrincipal {
 		Usuario esteUsuario = servicios.obtenerUsuarioPorId(id);
 		model.addAttribute("usuario", esteUsuario); //Sobreescribo al usuario vacío
 		
+		List<Curso> listaCursos = servicios.obtenerTodosLosCursos();
+		model.addAttribute("cursos", listaCursos);
+		
 		return "editar.jsp";
 	}
 	
@@ -105,9 +108,12 @@ public class ControladorPrincipal {
 	//localhost:8080/actualizar/6
 	@PutMapping("/actualizar/{id}") //IMPORTANTE: debe llamarse id para que se asigne al ModelAttribute
 	public String actualizar(@Valid @ModelAttribute("usuario") Usuario usuarioEditado,
-							BindingResult result) {
+							BindingResult result,
+							Model model) {
 		
 		if(result.hasErrors()) {
+			List<Curso> listaCursos = servicios.obtenerTodosLosCursos();
+			model.addAttribute("cursos", listaCursos);
 			return "editar.jsp"; //para que se muestren los errores y que no cargue de 0 la página
 		} else {
 			servicios.guardarUsuario(usuarioEditado);
