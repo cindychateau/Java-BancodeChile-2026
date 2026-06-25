@@ -58,7 +58,35 @@ public class Servicios {
 	}
 	
 	//Asignar a un usuario un hobby
+	public void asignarHobbyAUsuario(Long usuarioId, Long hobbyId) {
+		//usuarioId = 1
+		//hobbyId = 8
+		//Obtener al usuario al que le vamos a agregar el hobby
+		Usuario esteUsuario = obtenerUsuarioPorId(usuarioId); //Juana
+		
+		//Obtener el hobby que se va a agregar
+		Hobby esteHobby = obtenerHobbyPorId(hobbyId); //Bailar
+		
+		esteUsuario.getHobbies().add(esteHobby);
+		repoUsuarios.save(esteUsuario);
+		
+		//esteHobby.getUsuarios().add(esteUsuario);
+		//repoHobbies.save(esteHobby);
+		
+	}
 	
 	//Quitar a un usuario un hobby
+	public void quitarHobbyAUsuario(Long usuarioId, Long hobbyId) {
+		//Obtener el usuario al que le queremos quitar el hobby
+		Usuario esteUsuario = obtenerUsuarioPorId(usuarioId);
+		
+		//Obtener el hobby que queremos quitar
+		Hobby esteHobby = obtenerHobbyPorId(hobbyId);
+		
+		esteUsuario.getHobbies().remove(esteHobby);
+		repoUsuarios.save(esteUsuario);
+		
+		
+	}
 
 }

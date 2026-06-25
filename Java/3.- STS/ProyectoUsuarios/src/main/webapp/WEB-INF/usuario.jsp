@@ -13,6 +13,12 @@
 		<h1>Detalle del usuario</h1>
 		<h2>${usuario.nombre} ${usuario.apellido}</h2>
 		<h3>${usuario.email}</h3>
+		<h4>Hobbies:</h4>
+		<ul>
+			<c:forEach items="${usuario.hobbies}" var="hobby">
+				<li>${hobby.pasatiempo}</li>
+			</c:forEach>
+		</ul>
 		<a href="/dashboard" class="btn btn-primary">Regresar</a>
 	</main>
 </body>

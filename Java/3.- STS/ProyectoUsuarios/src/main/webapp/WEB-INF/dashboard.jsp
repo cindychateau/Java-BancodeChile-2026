@@ -22,6 +22,7 @@
 					<th>Apellido</th>
 					<th>Email</th>
 					<th>Curso</th>
+					<th>Hobbies</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -33,6 +34,13 @@
 					<td>${usuario.email}</td>
 					<td>${usuario.curso.nombreCurso}</td>
 					<td>
+						<ul>
+							<c:forEach items="${usuario.hobbies}" var="hobby">
+								<li>${hobby.pasatiempo}</li>
+							</c:forEach>
+						</ul>
+					</td>
+					<td>
 						<a href="/usuario/${usuario.id}" class="btn btn-primary" >Ver</a>
 						<form action="/borrar/${usuario.id}" method="POST">
 							<!-- Forzamos a que la solicitud sea DELETE -->
@@ -40,6 +48,7 @@
 							<input type="submit" value="Borrar" class="btn btn-danger" >
 						</form>
 						<a href="/editar/${usuario.id}" class="btn btn-info">Editar</a>
+						<a href="/asignar/${usuario.id}" class="btn btn-warning" >Asignar Hobbies</a>
 					</td>
 				</tr>
 				</c:forEach>	

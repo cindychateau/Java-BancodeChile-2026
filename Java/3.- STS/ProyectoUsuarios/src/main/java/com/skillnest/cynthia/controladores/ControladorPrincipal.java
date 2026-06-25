@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.skillnest.cynthia.modelos.Curso;
+import com.skillnest.cynthia.modelos.Hobby;
 import com.skillnest.cynthia.modelos.Usuario;
 import com.skillnest.cynthia.servicios.Servicios;
 
@@ -119,6 +120,46 @@ public class ControladorPrincipal {
 			servicios.guardarUsuario(usuarioEditado);
 			return "redirect:/dashboard"; //redireccionar a una ruta
 		}
+		
+	}
+	
+	//Creando una ruta para asignar hobbies a un usuario específico
+	@GetMapping("/asignar/{id}") //localhost:8080/asignar/1
+	public String asignar(@PathVariable Long id, Model model) {
+		
+		//Buscar al usuario al que le voy a asignar los hobbies
+		Usuario esteUsuario = servicios.obtenerUsuarioPorId(id);
+		model.addAttribute("usuario", esteUsuario);
+		
+		//Lista de Hobbies
+		List<Hobby> hobbies = servicios.obtenerTodosLosHobbies();
+		model.addAttribute("hobbies", hobbies);
+		
+		return "asignar.jsp";
+		
+	}
+	
+	@GetMapping("/asignarHobby/{usuarioId}/{hobbyId}")
+	public String asignarHobby(@PathVariable Long usuarioId, @PathVariable Long hobbyId) {
+		//usuarioId = 1
+		//hobbyId = 8
+		//Invocar a un método de mi servicio que reciba usuarioId y hobbyId y los relacione
+		servicios.asignarHobbyAUsuario(usuarioId, hobbyId);
+		
+		
+		return "redirect:/asignar/"+usuarioId;
+		
+	}
+	
+	//localhost:8080/quitarHobby/1/8
+	@GetMapping("/quitarHobby/{usuarioId}/{hobbyId}")
+	public String quitarHobby(@PathVariable Long usuarioId,
+							 @PathVariable Long hobbyId) {
+		
+		//Invocar a un método de mi servicio que reciba usuarioId y hobbyId y los desvincule
+		servicios.quitarHobbyAUsuario(usuarioId, hobbyId);
+		
+		return "redirect:/asignar/"+usuarioId;
 		
 	}
 	
