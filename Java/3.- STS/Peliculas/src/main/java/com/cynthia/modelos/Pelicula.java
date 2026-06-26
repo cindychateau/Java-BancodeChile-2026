@@ -1,14 +1,20 @@
 package com.cynthia.modelos;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -45,12 +51,26 @@ public class Pelicula {
 	@NotBlank(message="Imagen obligatoria")
 	private String urlImagen;
 	
+	/*Cantidad en Stock Integer*/
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="usuario_id") //Clave foránea
+	private Usuario creador; //El usuario que creó la peli
+	
+	@ManyToMany(fetch=FetchType.LAZY)
+	@JoinTable(
+			name="pelis_compradas",
+			joinColumns=@JoinColumn(name="pelicula_id"),
+			inverseJoinColumns=@JoinColumn(name="usuario_id")
+			)
+	private List<Usuario> compradores;
 	
 	public Pelicula() {
 		
@@ -120,6 +140,24 @@ public class Pelicula {
 		this.updatedAt = updatedAt;
 	}
 	
+	
+	
+	public Usuario getCreador() {
+		return creador;
+	}
+
+	public void setCreador(Usuario creador) {
+		this.creador = creador;
+	}
+
+	public List<Usuario> getCompradores() {
+		return compradores;
+	}
+
+	public void setCompradores(List<Usuario> compradores) {
+		this.compradores = compradores;
+	}
+
 	//ANTES de crear un nuevo registro
 	@PrePersist
 	protected void onCreate() {
