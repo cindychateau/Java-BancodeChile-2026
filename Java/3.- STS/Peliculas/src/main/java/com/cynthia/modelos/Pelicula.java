@@ -133,4 +133,4 @@ public class Pelicula {
        this.updatedAt = new Date(); //updatedAt = CURRENT_TIMESTAMP
 	}
 	
-}
+} 
