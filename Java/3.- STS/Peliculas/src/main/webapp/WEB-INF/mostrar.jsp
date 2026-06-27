@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Mostrar Película</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -17,29 +17,29 @@
 			<!-- Botón para ir a Mis Compras -->
 			<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
 		</header>
-		<!-- Mostrar pelis -->
 		<div class="row">
 			<div class="col-8">
-				<c:forEach items="${peliculas}" var="pelicula">
-					<div class="card mb-3">
-						<div class="row">
-							<div class="col-4">
-								<img src="${pelicula.urlImagen}" alt="pelicula" class="img-fluid" >
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-								    <h5 class="card-title"><a href="/mostrar/${pelicula.id}">${pelicula.titulo}</a></h5>
-								    <p class="card-text"><b>Director:</b>${pelicula.director}</p>
-								    <p class="card-text"><b>Año:</b>${pelicula.anio}</p>
-								    <!-- Solamente aquel que creó la peli, puede ver el botón editar -->
-								    <a href="/editar/${pelicula.id}" class="btn btn-primary">Editar</a>
-								</div>
+				<div class="card mb-3">
+					<div class="row">
+						<div class="col-4">
+							<img src="${pelicula.urlImagen}" alt="pelicula" class="img-fluid" >
+						</div>
+						<div class="col-8">
+							<div class="card-body">
+							    <h5 class="card-title">${pelicula.titulo}</h5>
+							    <p class="card-text"><b>Director:</b>${pelicula.director}</p>
+							    <p class="card-text"><b>Año:</b>${pelicula.anio}</p>
+							    <p class="card-text"><b>Sinopsis:</b>${pelicula.sinopsis}</p>
+							    <p class="card-text"><b>Usuario creador:</b>${pelicula.creador.nombre}</p>
+							    <!-- BONUS: botón para comprar -->
 							</div>
 						</div>
 					</div>
-				</c:forEach>
+				</div>
 			</div>
 		</div>
+		<!-- Compradores -->
+		<div></div>
 	</div>
 </body>
 </html>
