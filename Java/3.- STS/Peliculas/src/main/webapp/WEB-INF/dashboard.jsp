@@ -10,8 +10,36 @@
 </head>
 <body>
 	<div class="container">
-		<h1>¡Bienvenid@ ${usuarioEnSesion.nombre} !</h1>
-		<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
+		<header class="d-flex justify-content-between align-items-center">
+			<h1>¡Bienvenid@ ${usuarioEnSesion.nombre} !</h1>
+			<a href="/dashboard" class="btn btn-primary">Películas</a>
+			<a href="/nuevo" class="btn btn-success">Agregar Peli</a>
+			<!-- Botón para ir a Mis Compras -->
+			<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
+		</header>
+		<!-- Mostrar pelis -->
+		<div class="row">
+			<div class="col-8">
+				<c:forEach items="${peliculas}" var="pelicula">
+					<div class="card mb-3">
+						<div class="row">
+							<div class="col-4">
+								<img src="${pelicula.urlImagen}" alt="pelicula" class="img-fluid" >
+							</div>
+							<div class="col-8">
+								<div class="card-body">
+								    <h5 class="card-title"><a href="#">${pelicula.titulo}</a></h5>
+								    <p class="card-text"><b>Director:</b>${pelicula.director}</p>
+								    <p class="card-text"><b>Año:</b>${pelicula.anio}</p>
+								    <!-- Solamente aquel que creó la peli, puede ver el botón editar -->
+								    <a href="#" class="btn btn-primary">Editar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
