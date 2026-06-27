@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.cynthia.modelos.Pelicula;
 import com.cynthia.servicios.ServicioPeliculas;
@@ -41,5 +42,22 @@ public class ControladorDashboard {
 		
 		return "dashboard.jsp";
 	}
+	
+	//Ruta que muestra el formulario
+	@GetMapping("/nuevo")
+	public String nuevo(@ModelAttribute("nuevaPeli") Pelicula nuevaPeli, 
+						HttpSession session) {
+		/*===== Revisar que el usuario haya iniciado sesión =====*/
+		if(session.getAttribute("usuarioEnSesion") == null) {
+			//No ha iniciado sesión
+			return "redirect:/"; //redirijo al inicio de sesión
+		}
+		/*===== =====*/
+		
+		
+		return "nuevo.jsp";
+	}
+	
+	
 	
 }
