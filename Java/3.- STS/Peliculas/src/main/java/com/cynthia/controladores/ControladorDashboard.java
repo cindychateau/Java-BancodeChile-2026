@@ -5,13 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cynthia.modelos.Pelicula;
 import com.cynthia.servicios.ServicioPeliculas;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @Controller
 public class ControladorDashboard {
@@ -58,6 +61,17 @@ public class ControladorDashboard {
 		return "nuevo.jsp";
 	}
 	
-	
+	@PostMapping("/crear")
+	public String crear(@Valid @ModelAttribute("nuevaPeli") Pelicula nuevaPeli,
+						BindingResult result) {
+		
+		if(result.hasErrors()) {
+			return "nuevo.jsp";
+		} else {
+			servicioPelis.guardarPeli(nuevaPeli);
+			return "redirect:/dashboard";
+		}
+		
+	}
 	
 }
