@@ -12,6 +12,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="canciones")
@@ -22,18 +23,23 @@ public class Cancion {
 	private Long id;
 	
 	@NotEmpty
+	@Size(min=5, max=100, message="Título debe de tener entre 5 y 100 caracteres")
 	private String titulo;
 	
 	@NotEmpty
+	@Size(min=3)
 	private String artista;
 	
 	@NotEmpty
+	@Size(min=3)
 	private String album;
 	
 	@NotEmpty
+	@Size(min=3)
 	private String genero;
 	
 	@NotEmpty
+	@Size(min=3)
 	private String idioma;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")

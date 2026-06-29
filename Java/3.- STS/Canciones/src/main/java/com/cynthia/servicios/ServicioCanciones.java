@@ -22,4 +22,13 @@ public class ServicioCanciones {
 		return repoCanciones.findById(id).orElse(null);
 	}
 	
+	//Guardar un nuevo registro y editar un registro
+	public Cancion guardarCancion(Cancion cancion) {
+		return repoCanciones.save(cancion);
+	}
+	
+	public void eliminaCancion(Long id) {
+		repoCanciones.deleteById(id);
+	}
+	
 }

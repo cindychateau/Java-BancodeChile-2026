@@ -11,6 +11,7 @@
 <body>
 	<main class="container">
 		<h1>Lista de Canciones</h1>
+		<a href="/canciones/formulario/agregar" class="btn btn-primary">Nueva Canción</a>
 		<table class="table table-striped">
 			<thead>
 				<tr>
