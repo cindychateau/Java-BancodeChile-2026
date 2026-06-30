@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.cynthia.modelos.Pelicula;
+import com.cynthia.modelos.Usuario;
 import com.cynthia.servicios.ServicioPeliculas;
 
 import jakarta.servlet.http.HttpSession;
@@ -93,6 +94,12 @@ public class ControladorDashboard {
 		model.addAttribute("pelicula", peliAEditar);
 		
 		//BONUS: Revisar que el usuario en sesión SI SEA el usuario creador
+		//Guardar el usuario en sesion
+		Usuario usuarioEnSesion = (Usuario)session.getAttribute("usuarioEnSesion");
+		if(usuarioEnSesion.getId() != peliAEditar.getCreador().getId()) {
+			return "redirect:/dashboard";
+		}
+		
 		
 		return "editar.jsp";
 	}
@@ -130,7 +137,47 @@ public class ControladorDashboard {
 		Pelicula peliAMostrar = servicioPelis.buscarPeli(id);
 		model.addAttribute("pelicula", peliAMostrar);
 		
+		//Buscar otra vez el usuario, para tener la versión más actualizada de las pelis compradas y creadas
+		Usuario usuarioEnSesion = (Usuario)session.getAttribute("usuarioEnSesion");
+		Usuario nuevaVersionEnSesion = servicioPelis.buscarUsuario(usuarioEnSesion.getId());
+		model.addAttribute("usuario", nuevaVersionEnSesion);
+		
 		return "mostrar.jsp";
+	}
+	
+	@GetMapping("/comprar/{usuarioId}/{peliculaId}")
+	public String comprar(@PathVariable Long usuarioId,
+						  @PathVariable Long peliculaId,
+						  HttpSession session) {
+		/*===== Revisar que el usuario haya iniciado sesión =====*/
+		if(session.getAttribute("usuarioEnSesion") == null) {
+			//No ha iniciado sesión
+			return "redirect:/"; //redirijo al inicio de sesión
+		}
+		/*===== =====*/
+		
+		//Método que relacione la película y el usuario
+		servicioPelis.comprarPelicula(usuarioId, peliculaId);
+		
+		return "redirect:/mostrar/"+peliculaId;
+	}
+	
+	@GetMapping("/mis-compras")
+	public String misCompras(HttpSession session, Model model) {
+		/*===== Revisar que el usuario haya iniciado sesión =====*/
+		if(session.getAttribute("usuarioEnSesion") == null) {
+			//No ha iniciado sesión
+			return "redirect:/"; //redirijo al inicio de sesión
+		}
+		/*===== =====*/
+		
+		//Buscar otra vez el usuario, para tener la versión más actualizada de las pelis compradas y creadas
+		Usuario usuarioEnSesion = (Usuario)session.getAttribute("usuarioEnSesion");
+		Usuario nuevaVersionEnSesion = servicioPelis.buscarUsuario(usuarioEnSesion.getId());
+		model.addAttribute("usuario", nuevaVersionEnSesion);
+		
+		
+		return "mis-compras.jsp";
 	}
 	
 }

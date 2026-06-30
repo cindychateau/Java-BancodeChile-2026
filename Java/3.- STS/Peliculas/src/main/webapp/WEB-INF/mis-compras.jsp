@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Mis Compras</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -18,30 +18,13 @@
 			<a href="/mis-compras" class="btn btn-warning">Mis Compras</a>
 			<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
 		</header>
-		<!-- Mostrar pelis -->
 		<div class="row">
-			<div class="col-8">
-				<c:forEach items="${peliculas}" var="pelicula">
-					<div class="card mb-3">
-						<div class="row">
-							<div class="col-4">
-								<img src="${pelicula.urlImagen}" alt="pelicula" class="img-fluid" >
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-								    <h5 class="card-title"><a href="/mostrar/${pelicula.id}">${pelicula.titulo}</a></h5>
-								    <p class="card-text"><b>Director:</b>${pelicula.director}</p>
-								    <p class="card-text"><b>Año:</b>${pelicula.anio}</p>
-								    <!-- Solamente aquel que creó la peli, puede ver el botón editar -->
-								    <c:if test="${pelicula.creador.id == usuarioEnSesion.id}">
-								    	<a href="/editar/${pelicula.id}" class="btn btn-primary">Editar</a>
-								    </c:if>
-								</div>
-							</div>
-						</div>
-					</div>
+			<h2>Mis compras</h2>
+			<ul>
+				<c:forEach items="${usuario.pelisCompradas}" var="pelicula">
+					<li>${pelicula.titulo} (${pelicula.anio})</li>
 				</c:forEach>
-			</div>
+			</ul>
 		</div>
 	</div>
 </body>

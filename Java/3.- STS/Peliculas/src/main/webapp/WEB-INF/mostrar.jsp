@@ -15,6 +15,7 @@
 			<a href="/dashboard" class="btn btn-primary">Películas</a>
 			<a href="/nuevo" class="btn btn-success">Agregar Peli</a>
 			<!-- Botón para ir a Mis Compras -->
+			<a href="/mis-compras" class="btn btn-warning">Mis Compras</a>
 			<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
 		</header>
 		<div class="row">
@@ -32,6 +33,12 @@
 							    <p class="card-text"><b>Sinopsis:</b>${pelicula.sinopsis}</p>
 							    <p class="card-text"><b>Usuario creador:</b>${pelicula.creador.nombre}</p>
 							    <!-- BONUS: botón para comprar -->
+							    <c:if test="${not usuario.pelisCompradas.contains(pelicula) }">
+							    	<a class="btn btn-success" href="/comprar/${usuario.id}/${pelicula.id}">Comprar</a>
+							    </c:if>
+							    <c:if test="${usuario.pelisCompradas.contains(pelicula)}">
+							    	<a class="btn btn-danger" href="#">Comprada!</a>
+							    </c:if>
 							</div>
 						</div>
 					</div>
@@ -39,7 +46,14 @@
 			</div>
 		</div>
 		<!-- Compradores -->
-		<div></div>
+		<div class="row">
+			<h2>Usuarios que han comprado la película</h2>
+			<ul>
+				<c:forEach items="${pelicula.compradores}" var="comprador">
+					<li>${comprador.nombre} ${comprador.apellido}</li>
+				</c:forEach>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>

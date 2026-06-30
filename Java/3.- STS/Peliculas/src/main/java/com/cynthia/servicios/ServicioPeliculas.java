@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cynthia.modelos.Pelicula;
+import com.cynthia.modelos.Usuario;
 import com.cynthia.repositorios.RepositorioPeliculas;
 import com.cynthia.repositorios.RepositorioUsuarios;
 
@@ -40,8 +41,22 @@ public class ServicioPeliculas {
 		return repoPelis.findById(id).orElse(null);
 	}
 	
+	public Usuario buscarUsuario(Long id) {
+		return repoUsuarios.findById(id).orElse(null);
+	}
+	
 	/*BONUS*/
 	//Comprar una película
+	public void comprarPelicula(Long usuarioId, Long peliculaId) {
+		//Obtener el usuario comprador
+		Usuario usuarioComprador = buscarUsuario(usuarioId);
+		
+		//Obtener la peli a comprar
+		Pelicula peliculaAComprar = buscarPeli(peliculaId);
+		
+		usuarioComprador.getPelisCompradas().add(peliculaAComprar);
+		repoUsuarios.save(usuarioComprador);
+	}
 	
 	
 }

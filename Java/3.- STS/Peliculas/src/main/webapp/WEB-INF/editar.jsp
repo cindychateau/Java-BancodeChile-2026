@@ -18,6 +18,7 @@
 			<a href="/dashboard" class="btn btn-primary">Películas</a>
 			<a href="/nuevo" class="btn btn-success">Agregar Peli</a>
 			<!-- Botón para ir a Mis Compras -->
+			<a href="/mis-compras" class="btn btn-warning">Mis Compras</a>
 			<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
 		</header>
 		<div class="row">
