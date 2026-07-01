@@ -3,6 +3,7 @@ package com.skillnest.cynthia.controladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -164,7 +165,20 @@ public class ControladorPrincipal {
 	}
 	
 	
-	
+	//localhost:8080/pagina/3
+	@GetMapping("/pagina/{numPagina}")
+	public String paginacion(@PathVariable int numPagina, Model model) {
+		
+		Page<Usuario> paginaActual = servicios.usuariosPorPagina(numPagina - 1); //Incluye la lista de usuarios que muestra esa página
+		
+		int totalDePaginas = paginaActual.getTotalPages(); //Visualizar el total de páginas que tenemos
+		
+		model.addAttribute("paginaActual", paginaActual);
+		model.addAttribute("totalDePaginas", totalDePaginas);
+		
+		return "dashboard2.jsp";
+		
+	}
 	
 	
 	

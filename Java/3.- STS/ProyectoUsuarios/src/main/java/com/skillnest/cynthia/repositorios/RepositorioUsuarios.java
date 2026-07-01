@@ -2,7 +2,7 @@ package com.skillnest.cynthia.repositorios;
 
 import java.util.List;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.skillnest.cynthia.modelos.Usuario;
@@ -10,7 +10,7 @@ import com.skillnest.cynthia.modelos.Usuario;
 //Genera todas las consultas de mi aplicación web
 //CRUD: Create Read Update Delete
 @Repository
-public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> {
+public interface RepositorioUsuarios extends JpaRepository<Usuario, Long> {
 	//JPA: Permite de manera dinámica crear consultas/queries, lenguaje más sencillo
 	
 	//SELECT * FROM usuarios;

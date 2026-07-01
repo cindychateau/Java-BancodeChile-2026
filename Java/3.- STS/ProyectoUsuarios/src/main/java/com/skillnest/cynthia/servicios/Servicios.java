@@ -3,6 +3,9 @@ package com.skillnest.cynthia.servicios;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.skillnest.cynthia.modelos.Curso;
@@ -86,6 +89,15 @@ public class Servicios {
 		esteUsuario.getHobbies().remove(esteHobby);
 		repoUsuarios.save(esteUsuario);
 		
+		
+	}
+	
+	//Método que regrese una página en específico, recibiendo el num de página
+	public Page<Usuario> usuariosPorPagina(int numPagina) {
+		//# de Página, Cantidad de Registros, Orden, Atributo del Orden
+		//Page request = Solicitud de la página
+		PageRequest pageRequest = PageRequest.of(numPagina, 3, Sort.Direction.ASC, "nombre");
+		return repoUsuarios.findAll(pageRequest);
 		
 	}
 
